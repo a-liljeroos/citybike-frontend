@@ -1,0 +1,19 @@
+@import "../colors.scss";
+
+.error-page {
+  height: 400px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.error-msg {
+  color: $text-color;
+}
+
+.emote {
+  color: $color-1;
+}

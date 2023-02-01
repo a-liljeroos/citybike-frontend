@@ -1,0 +1,284 @@
+@import "./components/colors.scss";
+
+.App {
+  position: relative;
+  min-height: 100vh;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 95vh;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+  scroll-behavior: smooth;
+}
+
+.page {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 600px;
+  @media (max-width: 600px) {
+    width: 100%;
+  }
+  height: 100%;
+  padding: 10px;
+}
+
+.index-page {
+  padding-top: 60px;
+}
+
+.index-text {
+  color: $text-color;
+  text-align: left;
+  animation: text-reveal 700ms ease-out;
+}
+
+@keyframes text-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(-7px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.index-text {
+  padding: 5px 20px 5px 20px;
+  @media (max-width: 500px) {
+    width: 80%;
+
+    padding: 5px;
+  }
+}
+
+.list {
+  width: 100%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  direction: rtl;
+}
+
+.list-item {
+  width: 100%;
+  padding-block: 10px;
+
+  transition: 125ms;
+  border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.station-item {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  color: $text-color;
+  padding-left: 40px;
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+}
+
+.station-item:hover,
+.station-item:active {
+  color: $text-color-2;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.356);
+  width: 100%;
+}
+
+.go-up-btn {
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  @media (max-width: 600px) {
+    right: 30px;
+  }
+
+  background-color: $color-1;
+  border-bottom: 3px solid $midtone;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 7px;
+  transition: 100ms;
+  box-shadow: 0px 0px 5px $shadow;
+}
+
+.go-up-btn:active {
+  transform: scale(1.2) translateY(-10px);
+}
+
+.bg-color-1 {
+  background-color: $color-1;
+}
+
+.bg-color-2 {
+  background-color: $color-2;
+}
+
+a {
+  text-decoration: none;
+  color: $text-color;
+  white-space: nowrap;
+}
+
+.styled-scrollbar {
+  scrollbar-color: $color-1 #333;
+}
+
+.styled-scrollbar::-webkit-scrollbar {
+  width: 20px;
+  height: 20px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-thumb {
+  /* Foreground */
+  background: $color-1;
+  width: 25px;
+  height: 30px;
+  border-radius: 4px;
+  position: relative;
+  border-bottom: 3px solid $midtone;
+  box-shadow: 0px 0px 5px $shadow;
+  background-color: rgba(58, 158, 96, 1);
+  background-image: linear-gradient(
+    45deg,
+    rgba(90, 247, 150, 1) 50%,
+    rgba(58, 158, 96, 1) 50%
+  );
+  background-size: 4px 4px;
+}
+
+.styled-scrollbar::-webkit-scrollbar-track {
+  /* Background */
+  background: rgb(175, 175, 175);
+  border-radius: 5px;
+}
+
+.station-title {
+  text-align: center;
+  color: $text-color;
+  font-size: 30px;
+  letter-spacing: 2px;
+  padding: 20px;
+  padding-top: 40px;
+  margin: 0 auto;
+  @media (max-width: 600px) {
+    font-size: 25px;
+  }
+}
+
+.total-stations {
+  color: $text-color;
+  padding: 10px 10px 20px 10px;
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+}
+
+table {
+  padding-block: 20px;
+  color: $text-color;
+  font-size: 18px;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+th {
+  text-align: left;
+  text-decoration: underline;
+  width: 110px;
+  font-weight: 800;
+}
+
+.station-traffic {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.traffic-cont {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  @media (max-width: 600px) {
+    padding: 10px 5px 10px 5px;
+  }
+}
+.traffic-title {
+  color: $text-color-2;
+  text-align: center;
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
+}
+
+.traffic-amount {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 20px;
+  width: 100px;
+  color: $text-color-2;
+  text-align: center;
+  @media (max-width: 600px) {
+    font-size: 17px;
+    padding: 5px;
+  }
+}
+
+#traffic-cont-1 {
+  animation: reveal 700ms;
+}
+
+#traffic-cont-2 {
+  animation: reveal2 700ms;
+}
+
+.no-page {
+  display: flex;
+  align-items: center;
+  height: 400px;
+  color: $text-color;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
