@@ -1,4 +1,4 @@
-<image src="nav.PNG?raw=true" />
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/docs/nav.PNG?raw=true" />
 <h1>Citybike Web App Frontend</h1>
 
 <h2>👻 Using technologies</h2>
@@ -16,13 +16,13 @@
 
 <h2>👀 Preview:</h2>
 <span>
-<image src="stations.gif?raw=true" />
-<image src="journeys.gif?raw=true" />
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/docs/stations.gif?raw=true" />
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/docs/journeys.gif?raw=true" />
 </span>
 
 <h2>💬 Installation</h2>
 
-<p>Make sure that the database and API is installed first. See guide here 👉 <a>Citybike API</a></p>
+<p>Make sure that the database and API is installed first. See guide here 👉 <a target="_blank" href="https://github.com/a-liljeroos/citybike-api">Citybike API</a></p>
 <br/>
 <h3>1. Download the repository and navigate to the folder</h3>
 <pre>cd ./citybike-frontend</pre>
