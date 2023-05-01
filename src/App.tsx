@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   return (
@@ -8,7 +9,9 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <IndexPage />
+      <Routes>
+        <Route index element={<IndexPage />} />
+      </Routes>
     </div>
   );
 }
