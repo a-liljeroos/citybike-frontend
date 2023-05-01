@@ -34,6 +34,13 @@ main {
   padding: 10px;
 }
 
+.no-page {
+  display: flex;
+  align-items: center;
+  height: 400px;
+  color: $text-color;
+}
+
 .index-page {
   padding-top: 60px;
 }

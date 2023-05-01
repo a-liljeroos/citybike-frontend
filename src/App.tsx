@@ -2,6 +2,7 @@ import React from "react";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import { Routes, Route } from "react-router-dom";
+import NoPage from "./components/NoPage/NoPage";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       </header>
       <Routes>
         <Route index element={<IndexPage />} />
+        <Route path="*" element={<NoPage />} />
       </Routes>
     </div>
   );
