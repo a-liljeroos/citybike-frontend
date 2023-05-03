@@ -85,9 +85,42 @@ a {
 .list-item {
   width: 100%;
   padding-block: 10px;
-
   transition: 125ms;
   border-bottom: 1px solid rgb(196, 196, 196);
+}
+
+.station-item {
+  text-align: left;
+  font-size: 20px;
+  font-weight: 600;
+  color: $text-color;
+  padding-left: 40px;
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+}
+
+.go-up-btn {
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  @media (max-width: 600px) {
+    right: 30px;
+  }
+
+  background-color: $color-1;
+  border-bottom: 3px solid $midtone;
+  cursor: pointer;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  padding: 7px;
+  transition: 100ms;
+  box-shadow: 0px 0px 5px $shadow;
+}
+
+.go-up-btn:active {
+  transform: scale(1.2) translateY(-10px);
 }
 
 .styled-scrollbar {
@@ -121,4 +154,112 @@ a {
   /* Background */
   background: rgb(175, 175, 175);
   border-radius: 5px;
+}
+
+.station-title {
+  text-align: center;
+  color: $text-color;
+  font-size: 30px;
+  letter-spacing: 2px;
+  padding: 20px;
+  padding-top: 40px;
+  margin: 0 auto;
+  @media (max-width: 600px) {
+    font-size: 25px;
+  }
+}
+
+.total-stations {
+  color: $text-color;
+  padding: 10px 10px 20px 10px;
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+}
+
+table {
+  padding-block: 20px;
+  color: $text-color;
+  font-size: 18px;
+  @media (max-width: 600px) {
+    font-size: 14px;
+  }
+}
+
+th {
+  text-align: left;
+  text-decoration: underline;
+  width: 110px;
+  font-weight: 800;
+}
+
+.station-traffic {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.traffic-cont {
+  width: 40%;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  @media (max-width: 600px) {
+    padding: 10px 5px 10px 5px;
+  }
+}
+.traffic-title {
+  color: $text-color-2;
+  text-align: center;
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
+}
+
+.traffic-amount {
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 20px;
+  width: 100px;
+  color: $text-color-2;
+  text-align: center;
+  @media (max-width: 600px) {
+    font-size: 17px;
+    padding: 5px;
+  }
+}
+
+#traffic-cont-1 {
+  animation: reveal 700ms;
+}
+
+#traffic-cont-2 {
+  animation: reveal2 700ms;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal2 {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }

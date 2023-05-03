@@ -4,6 +4,8 @@ import NavBar from "./components/NavBar/NavBar";
 import { Routes, Route } from "react-router-dom";
 import NoPage from "./components/NoPage/NoPage";
 import Journeys from "./components/Journey/Journeys";
+import Station from "./components/Stations/Station";
+import StationListView from "./components/Stations/StationListView";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <main className="bg-color-2">
         <Routes>
           <Route index element={<IndexPage />} />
+          <Route path="stations" element={<StationListView />} />
+          <Route path="stations/:station_id" element={<Station />} />
           <Route path="journeys/:page" element={<Journeys />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
