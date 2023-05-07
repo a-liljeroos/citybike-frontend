@@ -9,7 +9,7 @@ interface IErrorMsg {
 const ErrorMsg = ({ message }: IErrorMsg) => {
   return (
     <div className="error-page">
-      <BsEmojiFrown size={50} className="emote" />
+      <BsEmojiFrown size={50} className="error-emote" />
       <h3 className="error-msg">{!message ? "Error occured..." : message}</h3>
     </div>
   );
