@@ -1,4 +1,4 @@
-import { useGetStations } from "../../Hooks";
+import { useGetStationList } from "../../Hooks";
 import { Link } from "react-router-dom";
 import { TiArrowUpOutline } from "react-icons/ti";
 import Spinner from "../Spinner/Spinner";
@@ -10,7 +10,7 @@ const StationList = () => {
     list?.scrollTo({ top: 0, behavior: "smooth" });
   };
 
-  const { data, isLoading, isError } = useGetStations();
+  const { data, isLoading, isError } = useGetStationList();
   if (isLoading) {
     return (
       <div className="page">

@@ -2,11 +2,11 @@ import { useQuery } from "react-query";
 import { URL } from "../constants";
 import { TStation } from "../Types";
 
-interface IuseGetStationInfo {
+interface IuseGetSingleStationData {
   station_id: string | undefined;
 }
 
-const useGetStationInfo = ({ station_id }: IuseGetStationInfo) => {
+const useGetSingleStationData = ({ station_id }: IuseGetSingleStationData) => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["getStationInfo", station_id],
     queryFn: async (): Promise<TStation> => {
@@ -32,4 +32,4 @@ const useGetStationInfo = ({ station_id }: IuseGetStationInfo) => {
   return { data, isLoading, isError, error: error as Error };
 };
 
-export { useGetStationInfo };
+export { useGetSingleStationData };

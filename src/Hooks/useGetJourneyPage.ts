@@ -2,22 +2,22 @@ import { useQuery } from "react-query";
 import { URL } from "../constants";
 import { TJourney } from "../Types";
 
-interface IuseGetJourneys {
+interface IuseGetJourneyPage {
   page: number;
 }
 
-type GetJourneys = {
+type JourneyPageResponse = {
   currentPage: number;
   pageSize: number;
   totalJourneys: number;
   journeys: TJourney[];
 };
 
-const useGetJourneys = ({ page }: IuseGetJourneys) => {
+const useGetJourneyPage = ({ page }: IuseGetJourneyPage) => {
   const pageNumber = Math.ceil(page);
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["journeys", pageNumber],
-    queryFn: async (): Promise<GetJourneys> => {
+    queryFn: async (): Promise<JourneyPageResponse> => {
       const res = await fetch(`${URL}/journeys?page=${pageNumber}`, {
         method: "GET",
         headers: { "Content-type": "application/json" },
@@ -38,4 +38,4 @@ const useGetJourneys = ({ page }: IuseGetJourneys) => {
   return { data, isLoading, isError, error: error as Error };
 };
 
-export { useGetJourneys };
+export { useGetJourneyPage };

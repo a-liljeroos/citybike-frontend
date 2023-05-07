@@ -2,7 +2,7 @@ import { useQuery, useQueryClient } from "react-query";
 import { URL } from "../constants";
 import { TStation } from "../Types";
 
-const useGetStations = () => {
+const useGetStationList = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["getStations"],
     queryFn: async (): Promise<TStation[]> => {
@@ -20,4 +20,4 @@ const useGetStations = () => {
   return { data, isLoading, isError };
 };
 
-export { useGetStations };
+export { useGetStationList };

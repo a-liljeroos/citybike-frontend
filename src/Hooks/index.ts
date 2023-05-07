@@ -1,3 +1,3 @@
-export { useGetJourneys } from "./useGetJourneys";
-export { useGetStations } from "./useGetStations";
-export { useGetStationInfo } from "./useGetStationInfo";
+export { useGetJourneyPage } from "./useGetJourneyPage";
+export { useGetStationList } from "./useGetStationList";
+export { useGetSingleStationData } from "./useGetSingleStationData";

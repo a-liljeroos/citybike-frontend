@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useGetJourneys } from "../../Hooks";
+import { useGetJourneyPage } from "../../Hooks";
 import ErrorMsg from "../ErrorMsg/ErrorMsg";
 import Spinner from "../Spinner/Spinner";
 import JourneyCard from "./JourneyCard";
@@ -12,7 +12,7 @@ const JourneyLists = () => {
   if (Number(page) < 1) {
     navigate("/journeys/1");
   }
-  const { data, isLoading, isError, error } = useGetJourneys({
+  const { data, isLoading, isError, error } = useGetJourneyPage({
     page: Number(page),
   });
   if (isLoading) {
