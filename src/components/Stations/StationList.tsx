@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { TiArrowUpOutline } from "react-icons/ti";
 import Spinner from "../Spinner/Spinner";
 import ErrorMsg from "../ErrorMsg/ErrorMsg";
-const StationListView = () => {
+
+const StationList = () => {
   const goUp = () => {
     const list = document.querySelector(".station-list");
     list?.scrollTo({ top: 0, behavior: "smooth" });
@@ -55,4 +56,4 @@ const StationListView = () => {
   );
 };
 
-export default StationListView;
+export default StationList;

@@ -2,9 +2,9 @@ import { useParams } from "react-router-dom";
 import { useGetStationInfo } from "../../Hooks";
 import ErrorMsg from "../ErrorMsg/ErrorMsg";
 import Spinner from "../Spinner/Spinner";
-import StationDataView from "./StationDataView";
+import StationData from "./StationData";
 
-const Station = () => {
+const SingleStation = () => {
   let { station_id } = useParams();
   const { data, isLoading, isError, error } = useGetStationInfo({
     station_id,
@@ -28,9 +28,9 @@ const Station = () => {
 
   return (
     <div className="page">
-      <StationDataView station={data} />
+      <StationData station={data} />
     </div>
   );
 };
 
-export default Station;
+export default SingleStation;

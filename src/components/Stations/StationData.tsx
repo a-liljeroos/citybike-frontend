@@ -2,11 +2,11 @@ import React from "react";
 import { TStation } from "../../Types";
 import TrafficCounter from "./TrafficCounter";
 
-interface IStationDataView {
+interface IStationData {
   station: TStation;
 }
 
-const StationDataView = ({ station }: IStationDataView) => {
+const StationData = ({ station }: IStationData) => {
   return (
     <>
       {" "}
@@ -52,4 +52,4 @@ const StationDataView = ({ station }: IStationDataView) => {
   );
 };
 
-export default StationDataView;
+export default StationData;
