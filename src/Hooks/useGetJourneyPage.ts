@@ -18,7 +18,7 @@ const useGetJourneyPage = ({ page }: IuseGetJourneyPage) => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["journeys", pageNumber],
     queryFn: async (): Promise<JourneyPageResponse> => {
-      const res = await fetch(`${URL}/journeys?page=${pageNumber}`, {
+      const res = await fetch(`${URL}/journeys/pages?page=${pageNumber}`, {
         method: "GET",
         headers: { "Content-type": "application/json" },
       });
