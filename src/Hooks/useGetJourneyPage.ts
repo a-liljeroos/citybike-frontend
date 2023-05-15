@@ -7,10 +7,13 @@ interface IuseGetJourneyPage {
 }
 
 type JourneyPageResponse = {
-  currentPage: number;
-  pageSize: number;
-  totalJourneys: number;
   journeys: TJourney[];
+  pagination: {
+    currentPage: number;
+    pageSize: number;
+    totalJourneys: number;
+    totalPages: number;
+  };
 };
 
 const useGetJourneyPage = ({ page }: IuseGetJourneyPage) => {

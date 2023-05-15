@@ -31,19 +31,12 @@ const JourneyPages = () => {
     );
   }
 
-  const journeyData = {
-    totalJourneys: data.totalJourneys,
-    totalPages: Math.ceil(data.totalJourneys / 29),
-    pageSize: data.pageSize,
-    currentPage: data.currentPage,
-  };
-
   return (
     <div className="page">
       <h3 className="total-journeys">
-        {journeyData.totalJourneys} journeys in the database.
+        {data.pagination.totalJourneys} journeys in the database.
       </h3>
-      <JourneyPageButtons {...journeyData} />
+      <JourneyPageButtons {...data.pagination} />
       <div className="list styled-scrollbar">
         {data?.journeys.map((journey, key) => {
           return (
