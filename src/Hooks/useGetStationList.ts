@@ -16,6 +16,8 @@ const useGetStationList = () => {
     onError: (error) => {
       toast.error(`Server is not responding`);
     },
+    refetchOnWindowFocus: false,
+    retry: false,
   });
   return { data, isLoading, isError };
 };
