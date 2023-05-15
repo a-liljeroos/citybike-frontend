@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { URL } from "../constants";
 import { TStation } from "../Types";
+import toast from "react-hot-toast";
 
 interface IuseGetSingleStationData {
   station_id: string | undefined;
@@ -25,6 +26,9 @@ const useGetSingleStationData = ({ station_id }: IuseGetSingleStationData) => {
       }
 
       return res.json();
+    },
+    onError: (error) => {
+      toast.error(`Server is not responding`);
     },
     refetchOnWindowFocus: false,
     retry: false,

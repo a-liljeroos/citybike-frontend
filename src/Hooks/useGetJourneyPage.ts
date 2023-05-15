@@ -1,6 +1,7 @@
 import { useQuery } from "react-query";
 import { URL } from "../constants";
 import { TJourney } from "../Types";
+import toast from "react-hot-toast";
 
 interface IuseGetJourneyPage {
   page: number;
@@ -34,6 +35,9 @@ const useGetJourneyPage = ({ page }: IuseGetJourneyPage) => {
         throw new Error("Error: journey page must be a number");
       }
       return res.json();
+    },
+    onError: (error) => {
+      toast.error(`Server is not responding`);
     },
     refetchOnWindowFocus: false,
     retry: false,

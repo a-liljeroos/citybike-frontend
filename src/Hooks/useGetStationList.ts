@@ -1,6 +1,7 @@
 import { useQuery, useQueryClient } from "react-query";
 import { URL } from "../constants";
 import { TStation } from "../Types";
+import toast from "react-hot-toast";
 
 const useGetStationList = () => {
   const { data, isLoading, isError } = useQuery({
@@ -12,9 +13,8 @@ const useGetStationList = () => {
       });
       return res.json();
     },
-
     onError: (error) => {
-      //toast.error(`Something went wrong: ${error}`);
+      toast.error(`Server is not responding`);
     },
   });
   return { data, isLoading, isError };
