@@ -3,7 +3,7 @@ import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import { Routes, Route } from "react-router-dom";
 import NoPage from "./components/NoPage/NoPage";
-import JourneyLists from "./components/Journey/JourneyLists";
+import JourneyPages from "./components/Journey/JourneyPages";
 import SingleStation from "./components/Stations/SingleStation";
 import StationList from "./components/Stations/StationList";
 
@@ -18,7 +18,7 @@ function App() {
           <Route index element={<IndexPage />} />
           <Route path="stations" element={<StationList />} />
           <Route path="stations/:station_id" element={<SingleStation />} />
-          <Route path="journeys/:page" element={<JourneyLists />} />
+          <Route path="journeys/:page" element={<JourneyPages />} />
           <Route path="*" element={<NoPage />} />
         </Routes>
       </main>

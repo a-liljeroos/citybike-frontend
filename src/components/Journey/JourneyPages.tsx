@@ -6,7 +6,7 @@ import Spinner from "../Spinner/Spinner";
 import JourneyCard from "./JourneyCard";
 import JourneyPageButtons from "./JourneyPageButtons";
 
-const JourneyLists = () => {
+const JourneyPages = () => {
   let { page } = useParams();
   const navigate = useNavigate();
   if (Number(page) < 1) {
@@ -57,4 +57,4 @@ const JourneyLists = () => {
   );
 };
 
-export default JourneyLists;
+export default JourneyPages;
