@@ -40,11 +40,17 @@ const StationData = ({ station }: IStationData) => {
         <div className="station-traffic">
           <div className="traffic-cont" id="traffic-cont-1">
             <h3 className="traffic-title">Departures</h3>
-            <TrafficCounter trafficAmount={station.station_departures} />
+            <TrafficCounter
+              counterKey={1}
+              trafficAmount={station.station_departures}
+            />
           </div>
           <div className="traffic-cont" id="traffic-cont-2">
             <h3 className="traffic-title">Returns</h3>
-            <TrafficCounter trafficAmount={station.station_returns} />
+            <TrafficCounter
+              counterKey={2}
+              trafficAmount={station.station_returns}
+            />
           </div>
         </div>
       )}
