@@ -1,9 +1,27 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import {
+  renderHook,
+  waitFor,
+  render,
+  screen,
+  waitForElementToBeRemoved,
+} from "@testing-library/react";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+import { QueryClientWrapper } from "./mocks/testQueryClient";
+import StationList from "./components/Stations/StationList";
+
+describe("StationList", () => {
+  it("displays the fetched data", async () => {
+    render(
+      <QueryClientWrapper>
+        <StationList />
+      </QueryClientWrapper>
+    );
+    await waitForElementToBeRemoved(() => screen.getByTestId("spinner"));
+
+    expect(
+      screen.getByText("10 stations in the database.")
+    ).toBeInTheDocument();
+    expect(screen.getByText("Malminkartanonhuippu")).toBeInTheDocument();
+    expect(screen.getByText("Hankasuontie")).toBeInTheDocument();
+  });
 });

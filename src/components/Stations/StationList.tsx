@@ -26,15 +26,12 @@ const StationList = () => {
     );
   }
   return (
-    <div className="page">
+    <div className="page" data-testid="stations-list">
       <h3 className="total-stations">
         {data?.length} stations in the database.
       </h3>
 
-      <div
-        data-testid="stations-list"
-        className="list styled-scrollbar station-list"
-      >
+      <div className="list styled-scrollbar station-list">
         {data?.map((station, key) => {
           return (
             <Link
