@@ -17,7 +17,11 @@ root.render(
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <App />
-        <Toaster />
+        <Toaster
+          toastOptions={{
+            className: "toast",
+          }}
+        />
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>
