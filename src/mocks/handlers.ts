@@ -23,4 +23,18 @@ export const handlers = [
 
     return res(ctx.status(200), ctx.json(singleStation));
   }),
+  rest.get(`${URL}/journeys/pages`, (req, res, ctx) => {
+    const schema = Joi.object().keys({
+      page: Joi.number().min(1).required(),
+    });
+
+    const queryParams = req.url.searchParams;
+    const validation = schema.validate({ page: queryParams.get("page") });
+
+    if (validation.error) {
+      return res(ctx.status(422), ctx.json(validation.error.details));
+    } else {
+      return res(ctx.status(200), ctx.json(journeyPage1));
+    }
+  }),
 ];

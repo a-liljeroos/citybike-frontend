@@ -1,5 +1,4 @@
 import {
-  renderHook,
   waitFor,
   render,
   screen,
@@ -112,6 +111,29 @@ describe("SingleStation:", () => {
       expect(screen.getByTestId("spinner")).toBeInTheDocument();
       await waitForElementToBeRemoved(() => screen.getByTestId("spinner"));
       expect(screen.getByTestId("error-page")).toBeInTheDocument();
+    });
+  });
+});
+
+describe("JourneyPages:", () => {
+  describe("Fetch", () => {
+    it("displays the data", async () => {
+      render(
+        <QueryClientWrapper>
+          <MemoryRouter initialEntries={["/journeys/1"]}>
+            <Routes>
+              <Route path="journeys/:page" element={<JourneyPages />} />
+            </Routes>
+          </MemoryRouter>
+        </QueryClientWrapper>
+      );
+      expect(screen.getByTestId("spinner")).toBeInTheDocument();
+      await waitForElementToBeRemoved(() => screen.getByTestId("spinner"));
+
+      expect(
+        screen.getByText("3128756 journeys in the database.")
+      ).toBeInTheDocument();
+      expect(screen.getByText("Töölöntulli")).toBeInTheDocument();
     });
   });
 });
