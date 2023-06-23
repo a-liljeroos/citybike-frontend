@@ -1,46 +1,67 @@
-# Getting Started with Create React App
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/nav.PNG?raw=true" />
+<h1>Citybike Web App Frontend</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<h2>👻 Using technologies</h2>
+<ul>
+  <li>React</li>
+  <li>Typescript</li>
+  <li>HTML / CSS</li>
+  <li>Docker</li>
+  <li>react-query, react-router-dom, react-icons, react-countup, sass</li>
+  <li>jest, msw</li>
+</ul>
 
-## Available Scripts
+<br/>
+<p>This the frontend for the Citybike API. A small single page application made for learning purposes. I designed the user interface and application logic from scratch. Data fetching is implemented with <a target="_blank" href="https://react-query-v3.tanstack.com/" >react-query</a> which provides loading and error states.</p>
 
-In the project directory, you can run:
+<p> From the navigation bar the user can choose two paths: stations and journeys. </p>
+<p>The station link reveals a list view of citybike stations and by pressing an item it opens a single station view which contains the station name, address, station capacity and the sum of journeys that started and returned from/to the particular station. </p>
 
-### `npm start`
+<p>The journeys link leads to a journey list view with pagination. Pagination is done in the backend and the frontend requests a page per fetch. One page contains 30 journeys. From the list user can read where the journey started from and where it ended to, including the journey duration in minutes and distance in kilometeres. The user can also press a station from the list and it opens the single station view for the pressed station.</p>
+<p>The endpoints this application uses are listed in the <a target="_blank" href="https://github.com/a-liljeroos/citybike-api">API repository.</a> </p>
+<p>I used Jest test engine with this project and mocked the API responses with msw.</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h2>👀 Preview:</h2>
+<span>
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/stations.gif?raw=true" />
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/journeys.gif?raw=true" />
+</span>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<h2>💬 Installation</h2>
 
-### `npm test`
+<p>Make sure that the database and API is installed first. See guide here 👉 <a target="_blank" href="https://github.com/a-liljeroos/citybike-api">Citybike API</a></p>
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<h2>With Docker</h2>
+<h3>Install <a target="_blank" href="https://www.docker.com">docker</a></h3>
+<br/>
+<h3>1. Download the repository and navigate to the folder</h3>
+<pre>cd ./citybike-frontend</pre>
+<br/>
+<h3>2. Create docker image</h3>
+<pre>docker build -t citybike-frontend . </pre>
+<br/>
+<h3>3. Run</h3>
+<pre>docker run -p 3000:3000 citybike-frontend</pre>
+<br/>
+<h3>4. Open in browser.</h3>
+<pre>
+<a href="http://localhost:3000">http://localhost:3000</a>
+</pre>
+<br/>
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+<h2>With npm</h2>
+<br/>
+<h3>1. Download the repository and navigate to the folder</h3>
+<pre>cd ./citybike-frontend</pre>
+<br/>
+<h3>2. Install dependencies</h3>
+<pre>npm install</pre>
+<br/>
+<h3>3. Run</h3>
+<pre>npm run start</pre>
+<br/>
+<h3>4. Open in browser.</h3>
+<pre>
+<a href="http://localhost:3000">http://localhost:3000</a>
+</pre>
+<br/>
