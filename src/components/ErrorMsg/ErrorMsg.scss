@@ -1,13 +1,12 @@
 @import "../colors.scss";
 
 .error-page {
-  height: 400px;
-
+  align-items: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   gap: 20px;
+  height: 400px;
+  justify-content: center;
 }
 
 .error-msg {
