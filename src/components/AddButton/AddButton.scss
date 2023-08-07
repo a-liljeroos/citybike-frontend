@@ -1,0 +1,17 @@
+@import "../colors.scss";
+
+.add-button {
+  padding: 0px 7px 0px 7px;
+  background-color: $button-color;
+  border-bottom: $button-border;
+  border-radius: 3px;
+  cursor: pointer;
+  height: 40px;
+  outline: none;
+  transition: $button-speed;
+  text-shadow: 0px 0px 4px rgba(161, 161, 161, 0.336);
+}
+
+.add-button:active {
+  transform: translateY(1px);
+}

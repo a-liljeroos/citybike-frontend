@@ -28,7 +28,7 @@ function App() {
 
 const IndexPage = () => {
   return (
-    <div className="page index-page">
+    <div className="page index-page" role="main">
       <p className="index-text">
         This is a website where you can browse Helsinki CityBike travel data
         from 1.5. to 31.7.2021.

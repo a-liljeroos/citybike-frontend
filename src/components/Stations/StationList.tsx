@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { TiArrowUpOutline } from "react-icons/ti";
 import Spinner from "../Spinner/Spinner";
 import ErrorMsg from "../ErrorMsg/ErrorMsg";
+import AddButton from "../AddButton/AddButton";
 
 const StationList = () => {
   const goUp = () => {
@@ -27,9 +28,12 @@ const StationList = () => {
   }
   return (
     <div className="page" data-testid="stations-list">
-      <h3 className="total-stations">
-        {data?.length} stations in the database.
-      </h3>
+      <div className="station-nav-container">
+        <h3 className="total-stations">
+          {data?.length} stations in the database.
+        </h3>
+        <AddButton text="Add Station" />
+      </div>
 
       <div className="list styled-scrollbar station-list">
         {data?.map((station, key) => {
@@ -45,6 +49,7 @@ const StationList = () => {
             </Link>
           );
         })}
+        A
       </div>
       <div className="go-up-btn" onClick={goUp}>
         <TiArrowUpOutline size={35} color="white" />
