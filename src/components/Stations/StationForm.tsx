@@ -1,18 +1,18 @@
 import React from "react";
-import "./AddStationForm.scss";
+import "./StationForm.scss";
 import { TbArrowBigLeft } from "react-icons/tb";
 import { useForm } from "react-hook-form";
 
-interface IAddStationForm {
+interface IStationForm {
   viewForm: boolean;
   setViewForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const AddStationForm = ({ viewForm, setViewForm }: IAddStationForm) => {
+const StationForm = ({ viewForm, setViewForm }: IStationForm) => {
   const { register, handleSubmit } = useForm();
   return (
     <>
-      <div className="add-station-form-nav">
+      <div className="station-form-nav">
         <button
           onClick={() => {
             setViewForm(!viewForm);
@@ -22,7 +22,7 @@ const AddStationForm = ({ viewForm, setViewForm }: IAddStationForm) => {
         >
           <TbArrowBigLeft size={40} color="white" />
         </button>
-        <h2 className="add-station-form-title">+Add Station</h2>
+        <h2 className="station-form-title">+Add Station</h2>
       </div>
       <div className="station-form-container styled-scrollbar">
         <form
@@ -94,4 +94,4 @@ const AddStationForm = ({ viewForm, setViewForm }: IAddStationForm) => {
   );
 };
 
-export default AddStationForm;
+export default StationForm;

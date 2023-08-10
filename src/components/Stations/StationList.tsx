@@ -5,7 +5,7 @@ import { useState } from "react";
 import Spinner from "../Spinner/Spinner";
 import ErrorMsg from "../ErrorMsg/ErrorMsg";
 import AddButton from "../AddButton/AddButton";
-import AddStationForm from "./AddStationForm";
+import StationForm from "./StationForm";
 
 const StationList = () => {
   const goUp = () => {
@@ -35,7 +35,7 @@ const StationList = () => {
     case true:
       return (
         <div className="page" data-testid="stations-list">
-          <AddStationForm viewForm={viewForm} setViewForm={setViewForm} />;
+          <StationForm viewForm={viewForm} setViewForm={setViewForm} />;
         </div>
       );
     case false:

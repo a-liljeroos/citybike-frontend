@@ -1,8 +1,5 @@
 @import "../colors.scss";
 
-.add-station-form-nav {
-}
-
 .station-form-container {
   //border: 1px solid rgb(235, 15, 255);
   width: 100%;
@@ -21,14 +18,14 @@
   }
 }
 
-.add-station-form-nav {
+.station-form-nav {
   display: flex;
   align-items: center;
   width: 100%;
   padding-block: 10px;
 }
 
-.add-station-form-title {
+.station-form-title {
   width: 100%;
   color: $text-color;
   margin-left: 25px;
