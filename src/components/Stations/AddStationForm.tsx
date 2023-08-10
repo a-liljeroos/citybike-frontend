@@ -61,7 +61,16 @@ const AddStationForm = ({ viewForm, setViewForm }: IAddStationForm) => {
           </div>
           <div className="input-container">
             <label htmlFor="">Capacity</label>
-            <input type="text" />
+            {/* <input type="text" /> */}
+            <select>
+              {Array.from(Array(100).keys()).map((num, key) => {
+                return (
+                  <option key={key} value={num + 1}>
+                    {num + 1}
+                  </option>
+                );
+              })}
+            </select>
           </div>
           <div className="input-container">
             <label htmlFor="">Coordinate x</label>
