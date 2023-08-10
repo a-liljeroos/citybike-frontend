@@ -275,6 +275,15 @@ th {
   border-bottom: $button-border;
 }
 
+.edit-btn {
+  cursor: pointer;
+  width: 50px;
+  padding-top: 3px;
+  margin-left: -10px;
+  border: none;
+  background-color: transparent;
+}
+
 #traffic-cont-1 {
   animation: reveal 700ms;
 }

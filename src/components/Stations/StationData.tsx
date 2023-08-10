@@ -1,6 +1,7 @@
 import React from "react";
 import { TStation } from "../../Types";
 import TrafficCounter from "./TrafficCounter";
+import { FiEdit } from "react-icons/fi";
 
 interface IStationData {
   station: TStation;
@@ -11,6 +12,11 @@ const StationData = ({ station }: IStationData) => {
     <>
       {" "}
       <h2 className="station-title">{station.station_nimi}</h2>
+      <div className="station-data-options">
+        <button aria-label="edit station" className="edit-btn">
+          <FiEdit size={28} color="white" />
+        </button>
+      </div>
       <table>
         <tbody>
           <tr>
