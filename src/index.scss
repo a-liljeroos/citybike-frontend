@@ -58,6 +58,8 @@ select:active {
 }
 
 select {
+  font-family: "Roboto Mono", monospace;
+  padding-left: 8px;
   cursor: pointer;
   font-weight: 400;
   font-size: 1rem;
