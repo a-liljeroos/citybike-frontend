@@ -1,6 +1,7 @@
 import React from "react";
 import "./AddStationForm.scss";
 import { TbArrowBigLeft } from "react-icons/tb";
+import { useForm } from "react-hook-form";
 
 interface IAddStationForm {
   viewForm: boolean;
@@ -8,6 +9,7 @@ interface IAddStationForm {
 }
 
 const AddStationForm = ({ viewForm, setViewForm }: IAddStationForm) => {
+  const { register, handleSubmit } = useForm();
   return (
     <>
       <div className="add-station-form-nav">
@@ -23,46 +25,51 @@ const AddStationForm = ({ viewForm, setViewForm }: IAddStationForm) => {
         <h2 className="add-station-form-title">+Add Station</h2>
       </div>
       <div className="station-form-container styled-scrollbar">
-        <form id="station-form" action="">
+        <form
+          id="station-form"
+          action="POST"
+          onSubmit={handleSubmit((data) => {
+            console.log(data);
+          })}
+        >
           <div className="input-container">
             <label htmlFor="">Nimi</label>
-            <input type="text" />
+            <input required type="text" {...register("station_name")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Namn</label>
-            <input type="text" />
+            <input required type="text" {...register("station_namn")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Name</label>
-            <input type="text" />
+            <input required type="text" {...register("station_name")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Osoite</label>
-            <input type="text" />
+            <input required type="text" {...register("station_osoite")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Adress</label>
-            <input type="text" />
+            <input required type="text" {...register("station_adress")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Kaupunki</label>
-            <input type="text" />
+            <input required type="text" {...register("station_kaupunki")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Stad</label>
-            <input type="text" />
+            <input type="text" {...register("station_stad")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Operator</label>
-            <select>
+            <select required {...register("station_operator")}>
               <option value="Citybike Finland">Citybike Finland</option>
               <option value="Citybike Sweden">Citybike Sweden</option>
             </select>
           </div>
           <div className="input-container">
             <label htmlFor="">Capacity</label>
-            {/* <input type="text" /> */}
-            <select>
+            <select required {...register("station_capacity")}>
               {Array.from(Array(100).keys()).map((num, key) => {
                 return (
                   <option key={key} value={num + 1}>
@@ -74,11 +81,11 @@ const AddStationForm = ({ viewForm, setViewForm }: IAddStationForm) => {
           </div>
           <div className="input-container">
             <label htmlFor="">Coordinate x</label>
-            <input type="number" />
+            <input required type="number" {...register("station_coord_x")} />
           </div>
           <div className="input-container">
             <label htmlFor="">Coordinate y</label>
-            <input type="number" />
+            <input required type="number" {...register("station_coord_y")} />
           </div>
           <button className="save-button">Save</button>
         </form>
