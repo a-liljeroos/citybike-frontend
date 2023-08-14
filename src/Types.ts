@@ -11,7 +11,6 @@ export type TJourney = {
 };
 
 export type TStation = {
-  station_fid: number;
   station_id: number;
   station_nimi: string;
   station_namn: string;
