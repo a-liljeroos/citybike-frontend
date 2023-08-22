@@ -1,15 +1,27 @@
 import React from "react";
 import "./StationForm.scss";
 import { TbArrowBigLeft } from "react-icons/tb";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
+import { useGetSingleStationData } from "../../Hooks";
+import Spinner from "../Spinner/Spinner";
 
 interface IStationForm {
+  station_id?: string | undefined;
   viewForm: boolean;
   setViewForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const StationForm = ({ viewForm, setViewForm }: IStationForm) => {
-  const { register, handleSubmit } = useForm();
+const StationForm = ({ viewForm, setViewForm, station_id }: IStationForm) => {
+  const { data, isLoading } = useGetSingleStationData({
+    station_id: "14",
+  });
+
+  const { register, handleSubmit, control } = useForm();
+
+  if (isLoading) {
+    return <Spinner />;
+  }
+
   return (
     <>
       <div className="station-form-nav">
@@ -34,58 +46,173 @@ const StationForm = ({ viewForm, setViewForm }: IStationForm) => {
         >
           <div className="input-container">
             <label htmlFor="">Nimi</label>
-            <input required type="text" {...register("station_name")} />
+            <Controller
+              name="station_nimi"
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="text"
+                  {...field}
+                  value={field.value ?? data?.station_nimi}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Namn</label>
-            <input required type="text" {...register("station_namn")} />
+            <Controller
+              name="station_namn"
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="text"
+                  {...field}
+                  value={field.value ?? data?.station_namn}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Name</label>
-            <input required type="text" {...register("station_name")} />
+            <Controller
+              name={"station_name"}
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="text"
+                  {...field}
+                  value={field.value ?? data?.station_name}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Osoite</label>
-            <input required type="text" {...register("station_osoite")} />
+            <Controller
+              name={"station_osoite"}
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="text"
+                  {...field}
+                  value={field.value ?? data?.station_osoite}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Adress</label>
-            <input required type="text" {...register("station_adress")} />
+            <Controller
+              name="station_adress"
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="text"
+                  {...field}
+                  value={field.value ?? data?.station_adress}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Kaupunki</label>
-            <input required type="text" {...register("station_kaupunki")} />
+            <Controller
+              name="station_kaupunki"
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="text"
+                  {...field}
+                  value={field.value ?? data?.station_kaupunki}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Stad</label>
-            <input type="text" {...register("station_stad")} />
+            <Controller
+              name="station_stad"
+              control={control}
+              render={({ field }) => (
+                <input
+                  type="text"
+                  {...field}
+                  value={field.value ?? data?.station_stad}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Operator</label>
-            <select required {...register("station_operator")}>
-              <option value="Citybike Finland">Citybike Finland</option>
-              <option value="Citybike Sweden">Citybike Sweden</option>
-            </select>
+            <Controller
+              name="station_operator"
+              control={control}
+              render={({ field }) => (
+                <input
+                  type="text"
+                  defaultValue={field.value ?? data?.station_operator}
+                  {...field}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Capacity</label>
-            <select required {...register("station_capacity")}>
-              {Array.from(Array(100).keys()).map((num, key) => {
-                return (
-                  <option key={key} value={num + 1}>
-                    {num + 1}
-                  </option>
-                );
-              })}
-            </select>
+            <Controller
+              name="station_capacity"
+              control={control}
+              render={({ field }) => (
+                <select
+                  required
+                  defaultValue={field.value ?? data?.station_capacity}
+                  {...field}
+                >
+                  {Array.from(Array(100).keys()).map((num, key) => {
+                    return (
+                      <option key={key} value={num + 1}>
+                        {num + 1}
+                      </option>
+                    );
+                  })}
+                </select>
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Coordinate x</label>
-            <input required type="number" {...register("station_coord_x")} />
+            <Controller
+              name="station_coord_x"
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="number"
+                  {...field}
+                  value={field.value ?? data?.station_coord_x}
+                />
+              )}
+            />
           </div>
           <div className="input-container">
             <label htmlFor="">Coordinate y</label>
-            <input required type="number" {...register("station_coord_y")} />
+            <Controller
+              name="station_coord_y"
+              control={control}
+              render={({ field }) => (
+                <input
+                  required
+                  type="number"
+                  {...field}
+                  value={field.value ?? data?.station_coord_y}
+                />
+              )}
+            />
           </div>
           <button className="save-button">Save</button>
         </form>
