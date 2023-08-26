@@ -8,6 +8,7 @@ const SingleStation = () => {
   let { station_id } = useParams();
   const { data, isLoading, isError, error } = useGetSingleStationData({
     station_id,
+    trafficInfo: true,
   });
 
   if (isLoading) {

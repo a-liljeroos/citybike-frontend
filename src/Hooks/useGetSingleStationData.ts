@@ -5,16 +5,23 @@ import toast from "react-hot-toast";
 
 interface IuseGetSingleStationData {
   station_id: string | undefined;
+  trafficInfo: boolean;
 }
 
-const useGetSingleStationData = ({ station_id }: IuseGetSingleStationData) => {
+const useGetSingleStationData = ({
+  station_id,
+  trafficInfo,
+}: IuseGetSingleStationData) => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["getStationInfo", station_id],
     queryFn: async (): Promise<TStation> => {
       const res = await fetch(`${URL}/stations`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({ station_id }),
+        body: JSON.stringify({
+          station_id: station_id,
+          trafficInfo: trafficInfo,
+        }),
       });
 
       if (res.status === 400) {
