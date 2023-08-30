@@ -3,24 +3,20 @@ import { URL } from "../constants";
 import { TStation } from "../Types";
 import toast from "react-hot-toast";
 
-interface IuseGetSingleStationData {
+interface IuseGetStationData {
   station_id: string | undefined;
-  trafficInfo: boolean;
 }
 
-const useGetSingleStationData = ({
-  station_id,
-  trafficInfo,
-}: IuseGetSingleStationData) => {
+const useGetStationData = ({ station_id }: IuseGetStationData) => {
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["getStationInfo", station_id],
+    queryKey: ["getStationInfo", station_id, false],
     queryFn: async (): Promise<TStation> => {
       const res = await fetch(`${URL}/stations`, {
         method: "POST",
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
           station_id: station_id,
-          trafficInfo: trafficInfo,
+          trafficInfo: false,
         }),
       });
 
@@ -43,4 +39,4 @@ const useGetSingleStationData = ({
   return { data, isLoading, isError, error: error as Error };
 };
 
-export { useGetSingleStationData };
+export { useGetStationData };

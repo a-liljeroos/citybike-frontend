@@ -1,10 +1,10 @@
 import React from "react";
-import { TStation } from "../../Types";
+import { TStationWithTraffic } from "../../Types";
 import TrafficCounter from "./TrafficCounter";
 import { FiEdit } from "react-icons/fi";
 
 interface IStationData {
-  station: TStation;
+  station: TStationWithTraffic;
 }
 
 const StationData = ({ station }: IStationData) => {

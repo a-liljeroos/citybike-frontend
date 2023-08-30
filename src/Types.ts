@@ -23,6 +23,21 @@ export type TStation = {
   station_capacity: number;
   station_coord_x: number;
   station_coord_y: number;
+};
+
+export type TStationWithTraffic = {
+  station_id: number;
+  station_nimi: string;
+  station_namn: string;
+  station_name: string;
+  station_osoite: string;
+  station_adress: string;
+  station_kaupunki: string;
+  station_stad?: string;
+  station_operator?: string;
+  station_capacity: number;
+  station_coord_x: number;
+  station_coord_y: number;
   station_departures: number;
   station_returns: number;
 };

@@ -2,23 +2,26 @@ import React from "react";
 import "./StationForm.scss";
 import { TbArrowBigLeft } from "react-icons/tb";
 import { useForm, Controller } from "react-hook-form";
-import { useGetSingleStationData } from "../../Hooks";
+import { useGetStationData, useStationForm } from "../../Hooks";
 import Spinner from "../Spinner/Spinner";
 
 interface IStationForm {
-  station_id?: string | undefined;
+  id?: string | undefined;
   viewForm: boolean;
   setViewForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const StationForm = ({ viewForm, setViewForm, station_id }: IStationForm) => {
-  const { data, isLoading } = useGetSingleStationData({
-    station_id: "14",
+const StationForm = ({ viewForm, setViewForm, id }: IStationForm) => {
+  const station_id = Number(20);
+  const { data, isLoading } = useGetStationData({
+    station_id: station_id.toString(),
   });
 
-  const { register, handleSubmit, control } = useForm();
+  const { handleSubmit, control, reset } = useForm({ defaultValues: data });
 
-  if (isLoading) {
+  const { mutate, mutateLoading } = useStationForm({ station_id: station_id });
+
+  if (isLoading || !data) {
     return <Spinner />;
   }
 
@@ -40,8 +43,8 @@ const StationForm = ({ viewForm, setViewForm, station_id }: IStationForm) => {
         <form
           id="station-form"
           action="POST"
-          onSubmit={handleSubmit((data) => {
-            console.log(data);
+          onSubmit={handleSubmit((values) => {
+            mutate(values, { onSuccess: () => reset() });
           })}
         >
           <div className="input-container">
