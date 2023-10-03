@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
-import { useGetStationDataWithTraffic } from "../../Hooks";
-import ErrorMsg from "../ErrorMsg/ErrorMsg";
-import Spinner from "../Spinner/Spinner";
+import { useGetStationDataWithTraffic } from "../../../Hooks";
+import ErrorMsg from "../../ErrorMsg/ErrorMsg";
+import Spinner from "../../Spinner/Spinner";
 import StationData from "./StationData";
 
 const SingleStation = () => {

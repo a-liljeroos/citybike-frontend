@@ -1,7 +1,7 @@
 import React from "react";
 import "./JourneyStyling.scss";
 import { useNavigate } from "react-router-dom";
-import { TJourney } from "../../Types";
+import { TJourney } from "../../../Types";
 interface IjourneyCard {
   journey: TJourney;
 }
