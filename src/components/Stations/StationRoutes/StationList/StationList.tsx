@@ -1,11 +1,11 @@
-import { useGetStationList } from "../../../Hooks";
+import { useGetStationList } from "../../../../Hooks";
 import { Link } from "react-router-dom";
 import { TiArrowUpOutline } from "react-icons/ti";
 import { useState } from "react";
-import Spinner from "../../Spinner/Spinner";
-import ErrorMsg from "../../ErrorMsg/ErrorMsg";
-import AddButton from "../../AddButton/AddButton";
-import StationForm from "./StationForm";
+import Spinner from "../../../Spinner/Spinner";
+import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
+import AddButton from "../../../AddButton/AddButton";
+import StationForm from "../EditStation/StationForm";
 
 const StationList = () => {
   const goUp = () => {

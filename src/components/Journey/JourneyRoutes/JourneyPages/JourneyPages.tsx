@@ -1,8 +1,8 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useGetJourneyPage } from "../../../Hooks";
-import ErrorMsg from "../../ErrorMsg/ErrorMsg";
-import Spinner from "../../Spinner/Spinner";
+import { useGetJourneyPage } from "../../../../Hooks";
+import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
+import Spinner from "../../../Spinner/Spinner";
 import JourneyCard from "./JourneyCard";
 import JourneyPageButtons from "./JourneyPageButtons";
 

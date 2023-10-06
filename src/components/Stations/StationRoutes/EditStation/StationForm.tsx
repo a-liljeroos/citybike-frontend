@@ -2,8 +2,8 @@ import React from "react";
 import "./StationForm.scss";
 import { TbArrowBigLeft } from "react-icons/tb";
 import { useForm, Controller } from "react-hook-form";
-import { useGetStationData, useStationForm } from "../../../Hooks";
-import Spinner from "../../Spinner/Spinner";
+import { useGetStationData, useStationForm } from "../../../../Hooks";
+import Spinner from "../../../Spinner/Spinner";
 
 interface IStationForm {
   id?: string | undefined;

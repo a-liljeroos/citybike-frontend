@@ -9,9 +9,9 @@ import { server } from "./mocks/server";
 import { URL } from "./constants";
 import { MemoryRouter, Routes, Route } from "react-router-dom";
 import { QueryClientWrapper } from "./mocks/testQueryClient";
-import StationList from "./components/Stations/StationRoutes/StationList";
-import SingleStation from "./components/Stations/StationRoutes/SingleStation";
-import JourneyPages from "./components/Journey/JourneyRoutes/JourneyPages";
+import StationList from "./components/Stations/StationRoutes/StationList/StationList";
+import SingleStation from "./components/Stations/StationRoutes/SingleStation/SingleStation";
+import JourneyPages from "./components/Journey/JourneyRoutes/JourneyPages/JourneyPages";
 
 describe("StationList:", () => {
   describe("Fetch", () => {
