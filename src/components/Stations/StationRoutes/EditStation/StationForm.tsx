@@ -7,11 +7,9 @@ import Spinner from "../../../Spinner/Spinner";
 
 interface IStationForm {
   id?: string | undefined;
-  viewForm: boolean;
-  setViewForm: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const StationForm = ({ viewForm, setViewForm, id }: IStationForm) => {
+const StationForm = ({ id }: IStationForm) => {
   const station_id = Number(20);
   const { data, isLoading } = useGetStationData({
     station_id: station_id.toString(),
@@ -30,7 +28,7 @@ const StationForm = ({ viewForm, setViewForm, id }: IStationForm) => {
       <div className="station-form-nav">
         <button
           onClick={() => {
-            setViewForm(!viewForm);
+            window.history.back();
           }}
           title="Go back"
           className="go-back-btn"

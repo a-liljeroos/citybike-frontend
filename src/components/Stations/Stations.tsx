@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import StationList from "./StationRoutes/StationList/StationList";
 import SingleStation from "./StationRoutes/SingleStation/SingleStation";
 import { StationContextProvider } from "./StationContext";
+import EditStation from "./StationRoutes/EditStation/EditStation";
 
 const Stations = () => {
   return (
@@ -10,6 +11,7 @@ const Stations = () => {
       <Routes>
         <Route index element={<StationList />} />
         <Route path=":station_id" element={<SingleStation />} />
+        <Route path="edit" element={<EditStation />} />
       </Routes>
     </StationContextProvider>
   );
