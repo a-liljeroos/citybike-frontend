@@ -1,0 +1,86 @@
+@import "../colors.scss";
+
+.station-nav-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.station-nav-box {
+  width: 100%;
+  padding-inline: 10px;
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.station-filter-btn {
+  background-color: $button-color;
+  border-bottom: $button-border;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px $shadow;
+  cursor: pointer;
+  height: 40px;
+  padding-top: 3px;
+  transition: $button-speed;
+  width: 50px;
+}
+
+.station-details-btn {
+  background-color: $button-color;
+  border-bottom: $button-border;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px $shadow;
+  cursor: pointer;
+  height: 40px;
+  padding-top: 3px;
+  transition: $button-speed;
+  width: 50px;
+}
+
+.filter-container {
+  width: 100%;
+  transition: 100ms;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+.filter-select {
+  margin: 0;
+}
+
+.station-list-filter {
+  display: flex;
+  gap: 5px;
+  padding-right: 5px;
+}
+
+$filter-height: 60px;
+
+.filter-open {
+  animation: openFilter 500ms;
+  height: $filter-height;
+}
+
+.filter-close {
+  animation: closeFilter 500ms;
+  height: 0px;
+}
+
+@keyframes openFilter {
+  from {
+    height: 0px;
+  }
+  to {
+    height: $filter-height;
+  }
+}
+@keyframes closeFilter {
+  from {
+    height: $filter-height;
+  }
+  to {
+    height: 0px;
+  }
+}
