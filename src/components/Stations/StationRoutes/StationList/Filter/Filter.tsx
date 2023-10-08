@@ -1,5 +1,6 @@
 import React from "react";
 import { useStationContext } from "../../../StationContext";
+import { VscExpandAll } from "react-icons/vsc";
 import { TStation } from "../../../../../Types";
 
 // this determines the filter options for the station list
@@ -19,6 +20,8 @@ interface Ifilter {
 
 const Filter = ({ viewFilters, setViewFilters }: Ifilter) => {
   const {
+    viewDetails,
+    setViewDetails,
     sortStationKey,
     setSortStationKey,
     sortListDirection,
@@ -72,6 +75,14 @@ const Filter = ({ viewFilters, setViewFilters }: Ifilter) => {
           })}
         </select>
       </form>
+      <button
+        className="station-details-btn"
+        onClick={() => {
+          setViewDetails(!viewDetails);
+        }}
+      >
+        <VscExpandAll size={30} color="white" />
+      </button>
     </div>
   );
 };

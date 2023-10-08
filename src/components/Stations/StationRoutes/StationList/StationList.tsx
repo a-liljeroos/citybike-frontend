@@ -3,12 +3,14 @@ import { useStationContext } from "../../StationContext";
 import { Link } from "react-router-dom";
 import { LuSettings } from "react-icons/lu";
 import { TiArrowUpOutline } from "react-icons/ti";
+import { MdPedalBike } from "react-icons/md";
 import { useState } from "react";
 import Spinner from "../../../Spinner/Spinner";
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import AddButton from "../../../AddButton/AddButton";
 import Filter from "./Filter/Filter";
 import { sortObjectArray } from "../../../utilities";
+import { TStation } from "../../../../Types";
 
 const StationList = () => {
   const goUp = () => {
@@ -18,7 +20,8 @@ const StationList = () => {
 
   const [viewFilters, setViewFilters] = useState(false);
 
-  const { sortStationKey, sortListDirection } = useStationContext();
+  const { viewDetails, setViewDetails, sortStationKey, sortListDirection } =
+    useStationContext();
 
   const { data, isLoading, isError } = useGetStationList();
   if (isLoading || !data) {
@@ -77,9 +80,7 @@ const StationList = () => {
               key={key}
               to={`${station.station_id}`}
             >
-              <div className="list-item station-item">
-                {station.station_nimi}
-              </div>
+              <StationListItem station={station} details={viewDetails} />
             </Link>
           );
         })}
@@ -89,6 +90,30 @@ const StationList = () => {
       </div>
     </div>
   );
+};
+
+interface IStationListItem {
+  station: TStation;
+  details: boolean;
+}
+
+const StationListItem = ({ station, details }: IStationListItem) => {
+  if (details) {
+    return (
+      <div className="list-item station-item-details">
+        <div className="station-details details1">
+          <h5>{station.station_nimi}</h5>
+          <p>{station.station_kaupunki}</p>
+        </div>
+        <div className="station-details details2">
+          <p>{station.station_capacity}</p>
+          <MdPedalBike className="station-details-bike-svg" />
+        </div>
+      </div>
+    );
+  }
+
+  return <div className="list-item station-item">{station.station_nimi}</div>;
 };
 
 export default StationList;

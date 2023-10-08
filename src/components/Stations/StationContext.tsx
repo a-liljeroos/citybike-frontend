@@ -3,6 +3,8 @@ import { useLocalStorage } from "../utilities";
 import { TStation } from "../../Types";
 
 type TStationContext = {
+  viewDetails: boolean;
+  setViewDetails: React.Dispatch<React.SetStateAction<boolean>>;
   sortStationKey: keyof TStation;
   setSortStationKey: React.Dispatch<React.SetStateAction<keyof TStation>>;
   sortListDirection: boolean;
@@ -38,6 +40,8 @@ export function StationContextProvider({ children }: TStationContextProvider) {
   return (
     <StationContext.Provider
       value={{
+        viewDetails,
+        setViewDetails,
         sortStationKey,
         setSortStationKey,
         sortListDirection,
