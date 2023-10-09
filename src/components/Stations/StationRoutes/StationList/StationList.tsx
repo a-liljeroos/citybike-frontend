@@ -11,6 +11,7 @@ import AddButton from "../../../AddButton/AddButton";
 import Filter from "./Filter/Filter";
 import { sortObjectArray } from "../../../utilities";
 import { TStation } from "../../../../Types";
+import GoUpButton from "../../../GoUpButton/GoUpButton";
 
 const StationList = () => {
   const goUp = () => {
@@ -85,9 +86,7 @@ const StationList = () => {
           );
         })}
       </div>
-      <div className="go-up-btn" onClick={goUp}>
-        <TiArrowUpOutline size={35} color="white" />
-      </div>
+      <GoUpButton listElementClassName="station-list" />
     </div>
   );
 };
