@@ -3,6 +3,7 @@ import { useGetStationDataWithTraffic } from "../../../../Hooks";
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import Spinner from "../../../Spinner/Spinner";
 import StationData from "./StationData";
+import { useStationContext } from "../../StationContext";
 
 const SingleStation = () => {
   let { station_id } = useParams();
@@ -10,10 +11,12 @@ const SingleStation = () => {
     station_id,
   });
 
+  const { spinnerMessage } = useStationContext();
+
   if (isLoading) {
     return (
       <div className="page">
-        <Spinner />
+        <Spinner message={spinnerMessage} />
       </div>
     );
   }

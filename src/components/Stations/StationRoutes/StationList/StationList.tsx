@@ -21,8 +21,13 @@ const StationList = () => {
 
   const [viewFilters, setViewFilters] = useState(false);
 
-  const { viewDetails, setViewDetails, sortStationKey, sortListDirection } =
-    useStationContext();
+  const {
+    viewDetails,
+    setViewDetails,
+    sortStationKey,
+    sortListDirection,
+    setSpinnerMessage,
+  } = useStationContext();
 
   const { data, isLoading, isError } = useGetStationList();
   if (isLoading || !data) {
@@ -77,6 +82,9 @@ const StationList = () => {
               className="station-link"
               key={key}
               to={`${station.station_id}`}
+              onClick={() => {
+                setSpinnerMessage(station.station_nimi);
+              }}
             >
               <StationListItem station={station} details={viewDetails} />
             </Link>

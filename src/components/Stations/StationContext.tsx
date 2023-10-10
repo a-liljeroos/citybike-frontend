@@ -9,6 +9,8 @@ type TStationContext = {
   setSortStationKey: React.Dispatch<React.SetStateAction<keyof TStation>>;
   sortListDirection: boolean;
   setSortListDirection: React.Dispatch<React.SetStateAction<boolean>>;
+  spinnerMessage: string;
+  setSpinnerMessage: React.Dispatch<React.SetStateAction<string>>;
 };
 
 const StationContext = createContext<TStationContext>({} as TStationContext);
@@ -37,6 +39,8 @@ export function StationContextProvider({ children }: TStationContextProvider) {
     false
   );
 
+  const [spinnerMessage, setSpinnerMessage] = useState<string>("");
+
   return (
     <StationContext.Provider
       value={{
@@ -46,6 +50,8 @@ export function StationContextProvider({ children }: TStationContextProvider) {
         setSortStationKey,
         sortListDirection,
         setSortListDirection,
+        spinnerMessage,
+        setSpinnerMessage,
       }}
     >
       {children}
