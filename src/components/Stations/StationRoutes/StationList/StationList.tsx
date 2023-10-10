@@ -52,9 +52,6 @@ const StationList = () => {
     <div className="page" data-testid="stations-list">
       <div className="station-nav-container">
         <div className="station-nav-box">
-          <h3 className="total-stations">
-            {data?.length} stations in the database.
-          </h3>
           <Link to={"/stations/edit"}>
             <AddButton text="New Station" />
           </Link>

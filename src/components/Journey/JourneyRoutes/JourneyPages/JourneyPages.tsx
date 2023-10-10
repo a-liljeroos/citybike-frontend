@@ -33,9 +33,6 @@ const JourneyPages = () => {
 
   return (
     <div className="page">
-      <h3 className="total-journeys">
-        {data.pagination.totalJourneys} journeys in the database.
-      </h3>
       <JourneyPageButtons {...data.pagination} />
       <div className="list styled-scrollbar">
         {data?.journeys.map((journey, key) => {
