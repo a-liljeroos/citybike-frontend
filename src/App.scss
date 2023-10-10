@@ -6,7 +6,6 @@
 }
 
 header {
-  position: sticky;
   top: 0;
   z-index: 1;
 }
@@ -16,7 +15,7 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  min-height: 95vh;
+  height: 90vh;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
 }
@@ -27,11 +26,11 @@ main {
   flex-direction: column;
   position: relative;
   width: 600px;
+  height: 90vh;
+  padding: 6px 10px 10px 10px;
   @media (max-width: 600px) {
     width: 100%;
   }
-  height: 100%;
-  padding: 10px;
 }
 
 .no-page {
@@ -102,7 +101,7 @@ a {
 }
 
 .station-list {
-  height: 80vh;
+  height: 100%;
 }
 
 .station-item {
@@ -174,7 +173,7 @@ a {
 
 .total-stations {
   color: $text-color;
-  padding: 10px 10px 20px 10px;
+  padding: 0px 0px 5px 0px;
   @media (max-width: 500px) {
     font-size: 15px;
   }

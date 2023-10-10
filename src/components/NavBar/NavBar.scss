@@ -3,12 +3,9 @@
 nav {
   border-bottom: 3px solid $midtone;
   display: flex;
-  height: 80px;
+  height: 10vh;
   justify-content: center;
   width: 100%;
-  @media (max-width: 600px) {
-    height: 60px;
-  }
 }
 
 .nav-center {
@@ -34,6 +31,7 @@ nav {
   font-weight: 800;
   line-height: 63px;
   padding-inline: 10px;
+  transform: translateY(-3px);
   @media (max-width: 600px) {
     font-size: 22px;
     line-height: 43px;
@@ -52,18 +50,20 @@ nav {
 
 .nav-link-a {
   height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .nav-link {
   font-size: 18px;
   height: 100%;
-  line-height: 70px;
   padding-inline: 10px;
   position: relative;
   text-align: center;
+  display: grid;
+  place-items: center;
   @media (max-width: 600px) {
     font-size: 13px;
-    line-height: 50px;
   }
 }
 
