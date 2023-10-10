@@ -19,31 +19,16 @@
 }
 
 .station-form-nav {
-  display: flex;
-  align-items: center;
   width: 100%;
   padding-block: 10px;
+  height: 60px;
 }
 
 .station-form-title {
-  width: 100%;
   color: $text-color;
-  margin-left: 25px;
-  margin-bottom: 5px;
+  width: 100%;
+  margin-left: 60px;
   animation: 500ms revealForm;
-}
-
-.go-back-btn {
-  cursor: pointer;
-  background-color: transparent;
-  border: none;
-  border-radius: 50%;
-  padding: 5px;
-  transition: $button-speed;
-}
-
-.go-back-btn:hover {
-  background-color: $button-color;
 }
 
 .save-button {

@@ -1,9 +1,9 @@
 import React from "react";
 import "./StationForm.scss";
-import { TbArrowBigLeft } from "react-icons/tb";
 import { useForm, Controller } from "react-hook-form";
 import { useGetStationData, useStationForm } from "../../../../Hooks";
 import Spinner from "../../../Spinner/Spinner";
+import GoBackButton from "../../../GoBackButton/GoBackButton";
 
 interface IStationForm {
   id?: string | undefined;
@@ -26,16 +26,8 @@ const StationForm = ({ id }: IStationForm) => {
   return (
     <>
       <div className="station-form-nav">
-        <button
-          onClick={() => {
-            window.history.back();
-          }}
-          title="Go back"
-          className="go-back-btn"
-        >
-          <TbArrowBigLeft size={40} color="white" />
-        </button>
-        <h2 className="station-form-title">+Add Station</h2>
+        <GoBackButton />
+        <h2 className="station-form-title">Add Station</h2>
       </div>
       <div className="station-form-container styled-scrollbar">
         <form

@@ -1,0 +1,30 @@
+@import "./../colors.scss";
+
+.go-back-btn {
+  position: absolute;
+  cursor: pointer;
+  background-color: $button-color;
+  border: none;
+  border-radius: 50%;
+  padding: 5px;
+  transition: $button-speed;
+  height: $button-height;
+  width: $button-height;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: buttonReveal 500ms ease-out;
+}
+
+.go-back-btn:hover {
+  background-color: $button-color;
+}
+
+@keyframes buttonReveal {
+  from {
+    transform: translateX(10px);
+  }
+  to {
+    transform: translateX(0px);
+  }
+}

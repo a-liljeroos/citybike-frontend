@@ -2,6 +2,7 @@ import React from "react";
 import { TStationWithTraffic } from "../../../../Types";
 import TrafficCounter from "./TrafficCounter";
 import { FiEdit } from "react-icons/fi";
+import GoBackButton from "../../../GoBackButton/GoBackButton";
 
 interface IStationData {
   station: TStationWithTraffic;
@@ -11,6 +12,7 @@ const StationData = ({ station }: IStationData) => {
   return (
     <>
       {" "}
+      <GoBackButton top={25} left={20} />
       <h2 className="station-title">{station.station_nimi}</h2>
       <div className="station-data-options">
         <button aria-label="edit station" className="edit-btn">
