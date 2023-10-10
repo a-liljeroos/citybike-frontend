@@ -1,15 +1,21 @@
 @import "../colors.scss";
 
 .add-button {
-  padding: 0px 7px 0px 7px;
+  padding: 0px 6px 0px 6px;
   background-color: $button-color;
-  border-bottom: $button-border;
-  border-radius: 3px;
+  color: $button-text-color;
+  border-radius: $button-border-radius;
   cursor: pointer;
-  height: 40px;
+  height: $button-height;
   outline: none;
+  border: none;
   transition: $button-speed;
   text-shadow: 0px 0px 4px rgba(161, 161, 161, 0.336);
+  font-size: 19px;
+  font-weight: 600;
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
 }
 
 .add-button:active {

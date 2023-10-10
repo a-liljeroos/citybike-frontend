@@ -56,12 +56,12 @@ const StationList = () => {
             {data?.length} stations in the database.
           </h3>
           <Link to={"/stations/edit"}>
-            <AddButton text="Add Station" />
+            <AddButton text="New Station" />
           </Link>
           <button className="station-filter-btn">
             <LuSettings
-              size={30}
-              color="white"
+              size={26}
+              color="rgb(75, 75, 75)"
               onClick={() => {
                 setViewFilters(!viewFilters);
               }}

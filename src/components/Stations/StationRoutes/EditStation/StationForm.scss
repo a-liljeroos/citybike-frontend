@@ -46,6 +46,19 @@
   background-color: $button-color;
 }
 
+.save-button {
+  cursor: pointer;
+  margin-block: 30px;
+  margin-left: 30px;
+  margin-right: auto;
+  height: $button-height;
+  width: 50%;
+  font-size: 20px;
+  border-radius: $button-border-radius;
+  color: $button-text-color;
+  background-color: $button-color;
+}
+
 @keyframes revealForm {
   from {
     opacity: 0;

@@ -17,11 +17,12 @@
 
 .station-filter-btn {
   background-color: $button-color;
-  border-bottom: $button-border;
-  border-radius: 5px;
+  border: none;
+  outline: none;
+  border-radius: $button-border-radius;
   box-shadow: 0px 0px 5px $shadow;
   cursor: pointer;
-  height: 40px;
+  height: $button-height;
   padding-top: 3px;
   transition: $button-speed;
   width: 50px;
@@ -29,11 +30,12 @@
 
 .station-details-btn {
   background-color: $button-color;
-  border-bottom: $button-border;
-  border-radius: 5px;
+  border-radius: $button-border-radius;
+  border: none;
+  outline: none;
   box-shadow: 0px 0px 5px $shadow;
   cursor: pointer;
-  height: 40px;
+  height: $button-height;
   padding-top: 3px;
   transition: $button-speed;
   width: 50px;

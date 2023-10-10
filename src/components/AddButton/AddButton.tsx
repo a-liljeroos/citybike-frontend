@@ -7,7 +7,7 @@ interface IAddButton {
 }
 
 const AddButton = ({ text }: IAddButton) => {
-  return <button className="add-button button-font">{text}</button>;
+  return <button className="add-button">{text}</button>;
 };
 
 export default AddButton;

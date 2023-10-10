@@ -65,14 +65,14 @@ select {
   font-size: 1rem;
   outline: none;
   border: none;
-  height: 35px;
+  height: $button-height;
   margin: 8px;
   border-radius: 3px;
 }
 
 option {
   cursor: pointer;
-  height: 35px;
+  height: $button-height;
   font-weight: 400;
   font-size: 1rem;
 }
@@ -89,4 +89,13 @@ label {
   display: flex;
   flex-direction: column;
   direction: ltr;
+}
+
+button {
+  height: $button-height;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  border-radius: $button-border-radius;
+  font-weight: 600;
 }

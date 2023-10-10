@@ -81,7 +81,7 @@ const Filter = ({ viewFilters, setViewFilters }: Ifilter) => {
           setViewDetails(!viewDetails);
         }}
       >
-        <VscExpandAll size={30} color="white" />
+        <VscExpandAll size={30} color="rgb(75, 75, 75)" />
       </button>
     </div>
   );
