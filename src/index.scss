@@ -59,22 +59,25 @@ select:active {
 
 select {
   font-family: "Roboto Mono", monospace;
-  padding-left: 8px;
+  padding-left: 5px;
   cursor: pointer;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
   outline: none;
   border: none;
   height: $button-height;
   margin: 8px;
   border-radius: 3px;
+  letter-spacing: -1px;
 }
 
 option {
+  font-family: "Roboto Mono", monospace;
   cursor: pointer;
   height: $button-height;
-  font-weight: 400;
+  font-weight: 600;
   font-size: 1rem;
+  letter-spacing: -1px;
 }
 
 label {
@@ -92,10 +95,12 @@ label {
 }
 
 button {
+  font-family: "Roboto Mono", monospace;
   height: $button-height;
   border: none;
   outline: none;
   cursor: pointer;
   border-radius: $button-border-radius;
   font-weight: 600;
+  letter-spacing: -1px;
 }
