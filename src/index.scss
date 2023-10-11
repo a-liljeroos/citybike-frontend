@@ -59,6 +59,7 @@ select:active {
 
 select {
   font-family: "Roboto Mono", monospace;
+  color: $button-text-color;
   padding-left: 5px;
   cursor: pointer;
   font-weight: 600;
@@ -67,12 +68,13 @@ select {
   border: none;
   height: $button-height;
   margin: 8px;
-  border-radius: 3px;
+  border-radius: $button-border-radius;
   letter-spacing: -1px;
 }
 
 option {
   font-family: "Roboto Mono", monospace;
+  color: $button-text-color;
   cursor: pointer;
   height: $button-height;
   font-weight: 600;
@@ -103,4 +105,5 @@ button {
   border-radius: $button-border-radius;
   font-weight: 600;
   letter-spacing: -1px;
+  font-size: 1rem;
 }
