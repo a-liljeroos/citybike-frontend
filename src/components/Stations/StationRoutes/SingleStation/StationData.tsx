@@ -3,6 +3,7 @@ import { TStationWithTraffic } from "../../../../Types";
 import TrafficCounter from "./TrafficCounter";
 import { FiEdit } from "react-icons/fi";
 import GoBackButton from "../../../GoBackButton/GoBackButton";
+import Map from "./Map/Map";
 
 interface IStationData {
   station: TStationWithTraffic;
@@ -62,6 +63,7 @@ const StationData = ({ station }: IStationData) => {
           </div>
         </div>
       )}
+      <Map lat={station.station_coord_y} lng={station.station_coord_x} />
     </>
   );
 };

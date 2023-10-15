@@ -15,7 +15,7 @@ main {
   align-items: center;
   display: flex;
   flex-direction: column;
-  height: 90vh;
+  min-height: 90vh;
   scroll-behavior: smooth;
   scrollbar-width: none; /* Firefox */
 }
@@ -31,6 +31,16 @@ main {
   @media (max-width: 600px) {
     width: 100%;
   }
+}
+
+.page-expanded {
+  min-height: 150vh;
+  overflow-y: scroll;
+  padding-bottom: 50px;
+}
+
+.page-expanded::-webkit-scrollbar {
+  display: none;
 }
 
 .no-page {
