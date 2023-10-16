@@ -14,7 +14,7 @@ const useGetStationList = () => {
       return res.json();
     },
     onError: (error) => {
-      toast.error(`Server is not responding`);
+      toast.error(`Service Unavailable.`);
     },
     refetchOnWindowFocus: false,
     retry: false,

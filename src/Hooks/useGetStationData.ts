@@ -20,18 +20,10 @@ const useGetStationData = ({ station_id }: IuseGetStationData) => {
         }),
       });
 
-      if (res.status === 400) {
-        throw new Error("No results");
-      }
-
-      if (res.status === 422) {
-        throw new Error("Error: station id must be a number");
-      }
-
       return res.json();
     },
     onError: (error) => {
-      toast.error(`Server is not responding`);
+      toast.error(`Service Unavailable.`);
     },
     refetchOnWindowFocus: false,
     retry: false,

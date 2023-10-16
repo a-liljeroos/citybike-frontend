@@ -22,7 +22,7 @@ const useStationForm = ({ station_id }: IuseStationForm) => {
         queryKey: ["getStationInfo", station_id, false],
       }),
     onError: (error) => {
-      toast.error(`Server is not responding`);
+      toast.error(`Service Unavailable.`);
     },
     retry: false,
   });
