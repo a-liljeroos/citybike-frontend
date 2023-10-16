@@ -5,7 +5,8 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Toaster } from "react-hot-toast";
+import { Toaster, ToastBar } from "react-hot-toast";
+import CustomToaster from "./components/Toaster/CustomToaster";
 
 const queryClient = new QueryClient();
 
@@ -17,11 +18,7 @@ root.render(
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
         <App />
-        <Toaster
-          toastOptions={{
-            className: "toast",
-          }}
-        />
+        <CustomToaster />
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>

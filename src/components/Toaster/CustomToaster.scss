@@ -1,0 +1,43 @@
+@import "../colors.scss";
+
+@keyframes toast-enter {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes toast-exit {
+  0% {
+    transform: translateY(0);
+  }
+
+  10% {
+    transform: translateY(-5px);
+  }
+
+  20% {
+    transform: translateY(5px);
+  }
+
+  40% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+.toast-btn {
+  background-color: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
