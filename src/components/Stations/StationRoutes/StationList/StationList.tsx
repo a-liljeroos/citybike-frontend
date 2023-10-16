@@ -14,11 +14,6 @@ import { TStation } from "../../../../Types";
 import GoUpButton from "../../../GoUpButton/GoUpButton";
 
 const StationList = () => {
-  const goUp = () => {
-    const list = document.querySelector(".station-list");
-    list?.scrollTo({ top: 0, behavior: "smooth" });
-  };
-
   const [viewFilters, setViewFilters] = useState(false);
 
   const {
