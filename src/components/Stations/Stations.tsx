@@ -12,7 +12,7 @@ const Stations = () => {
       <Routes>
         <Route index element={<StationList />} />
         <Route path=":station_id" element={<SingleStation />} />
-        <Route path="edit" element={<EditStation />} />
+        <Route path="edit/:station_id" element={<EditStation />} />
       </Routes>
     </StationContextProvider>
   );
