@@ -4,6 +4,7 @@ import TrafficCounter from "./TrafficCounter";
 import { FiEdit } from "react-icons/fi";
 import GoBackButton from "../../../GoBackButton/GoBackButton";
 import Map from "./Map/Map";
+import { Link } from "react-router-dom";
 
 interface IStationData {
   station: TStationWithTraffic;
@@ -16,9 +17,11 @@ const StationData = ({ station }: IStationData) => {
       <GoBackButton top={25} left={20} />
       <h2 className="station-title">{station.station_nimi}</h2>
       <div className="station-data-options">
-        <button aria-label="edit station" className="edit-btn">
-          <FiEdit size={28} color="white" />
-        </button>
+        <Link to={`/stations/edit/${station.station_id}`}>
+          <button aria-label="edit station" className="edit-btn">
+            <FiEdit size={28} color="white" />
+          </button>
+        </Link>
       </div>
       <table>
         <tbody>

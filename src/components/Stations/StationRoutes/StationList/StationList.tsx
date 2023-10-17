@@ -52,7 +52,7 @@ const StationList = () => {
     <div className="page" data-testid="stations-list">
       <div className="station-nav-container">
         <div className="station-nav-box">
-          <Link to={"/stations/edit"}>
+          <Link to={"/stations/edit/new"}>
             <AddButton text="New Station" />
           </Link>
           <button className="station-filter-btn">
