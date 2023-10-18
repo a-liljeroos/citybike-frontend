@@ -104,27 +104,6 @@ a {
   width: 100%;
 }
 
-.station-nav-container {
-  display: flex;
-  align-items: baseline;
-  width: 100%;
-}
-
-.station-list {
-  height: 100%;
-}
-
-.station-item {
-  color: $text-color;
-  font-size: 20px;
-  font-weight: 600;
-  padding-left: 20px;
-  text-align: left;
-  @media (max-width: 500px) {
-    font-size: 15px;
-  }
-}
-
 .button-font {
   color: $button-text-color;
   font-size: 19px;
@@ -168,19 +147,6 @@ a {
   border-radius: 5px;
 }
 
-.station-title {
-  color: $text-color;
-  font-size: 30px;
-  letter-spacing: 2px;
-  margin: 0 auto;
-  padding-top: 40px;
-  padding: 20px;
-  text-align: center;
-  @media (max-width: 600px) {
-    font-size: 25px;
-  }
-}
-
 table {
   color: $text-color;
   font-size: 18px;
@@ -195,14 +161,6 @@ th {
   text-align: left;
   text-decoration: underline;
   width: 110px;
-}
-
-.station-traffic {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  padding: 20px;
-  width: 100%;
 }
 
 .traffic-cont {
