@@ -1,4 +1,3 @@
-import React from "react";
 import { TbArrowBigLeft } from "react-icons/tb";
 import "./GoBackButton.scss";
 

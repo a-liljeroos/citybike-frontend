@@ -1,4 +1,3 @@
-import React from "react";
 import "./ErrorMsg.scss";
 import { BsEmojiFrown } from "react-icons/bs";
 

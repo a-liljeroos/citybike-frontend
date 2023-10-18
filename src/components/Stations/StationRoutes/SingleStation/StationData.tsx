@@ -1,4 +1,3 @@
-import React from "react";
 import { TStationWithTraffic } from "../../../../Types";
 import TrafficCounter from "./TrafficCounter";
 import { FiEdit } from "react-icons/fi";

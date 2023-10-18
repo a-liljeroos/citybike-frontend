@@ -1,12 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom/client";
-import "./index.scss";
 import App from "./App";
+import ReactDOM from "react-dom/client";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Toaster, ToastBar } from "react-hot-toast";
 import CustomToaster from "./components/Toaster/CustomToaster";
+import "./index.scss";
 
 const queryClient = new QueryClient();
 

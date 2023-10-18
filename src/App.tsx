@@ -1,4 +1,3 @@
-import React from "react";
 import "./App.scss";
 import NavBar from "./components/NavBar/NavBar";
 import { Routes, Route } from "react-router-dom";

@@ -1,4 +1,3 @@
-import React from "react";
 import { TiArrowUpOutline } from "react-icons/ti";
 import "./GoUpButton.scss";
 
