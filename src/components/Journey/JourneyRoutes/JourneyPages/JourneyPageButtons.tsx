@@ -17,17 +17,9 @@ const JourneyPageButtons = ({
 }: IJourneyPageButtons) => {
   const navigate = useNavigate();
 
-  function renderButton(currentPage: number): boolean {
-    if (currentPage > 1) {
-      return true;
-    }
-
-    return false;
-  }
-
   return (
     <div className="journey-pages">
-      {renderButton(currentPage) && (
+      {currentPage > 1 && (
         <button
           className="page-btn"
           onClick={() => {
@@ -37,11 +29,9 @@ const JourneyPageButtons = ({
           {"<"}
         </button>
       )}
-
       <button disabled className="page-btn current-page-btn">
         {currentPage}
       </button>
-
       <button
         className="page-btn"
         onClick={() => {
@@ -50,15 +40,6 @@ const JourneyPageButtons = ({
       >
         {">"}
       </button>
-
-      {/*   <button
-        className="page-btn"
-        onClick={() => {
-          navigate(`/journeys/${totalPages}`);
-        }}
-      >
-        {totalPages}
-      </button> */}
     </div>
   );
 };
