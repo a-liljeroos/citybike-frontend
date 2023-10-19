@@ -1,5 +1,6 @@
 import TrafficCounter from "./TrafficCounter";
 import { useGetStationTrafficData } from "../../../../../Hooks/useGetStationTrafficData";
+import SmallSpinner from "../../../../Spinner/SmallSpinner";
 
 interface IStationTraffic {
   station_id: number;
@@ -32,7 +33,11 @@ const StationTraffic = ({ station_id }: IStationTraffic) => {
 };
 
 const Loader = () => {
-  return <div style={{ height: "45px" }}></div>;
+  return (
+    <div style={{ height: "45px" }}>
+      <SmallSpinner />
+    </div>
+  );
 };
 
 export default StationTraffic;
