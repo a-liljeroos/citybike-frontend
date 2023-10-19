@@ -1,5 +1,4 @@
-import { TStationWithTraffic } from "../../../../Types";
-
+import { TStation } from "../../../../Types";
 import { FiEdit } from "react-icons/fi";
 import GoBackButton from "../../../GoBackButton/GoBackButton";
 import Map from "./Map/Map";
@@ -7,7 +6,7 @@ import { Link } from "react-router-dom";
 import StationTraffic from "./StationTraffic/StationTraffic";
 
 interface IStationData {
-  station: TStationWithTraffic;
+  station: TStation;
 }
 
 const StationData = ({ station }: IStationData) => {
