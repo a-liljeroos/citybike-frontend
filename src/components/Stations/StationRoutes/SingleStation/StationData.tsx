@@ -1,9 +1,10 @@
 import { TStationWithTraffic } from "../../../../Types";
-import TrafficCounter from "./TrafficCounter";
+
 import { FiEdit } from "react-icons/fi";
 import GoBackButton from "../../../GoBackButton/GoBackButton";
 import Map from "./Map/Map";
 import { Link } from "react-router-dom";
+import StationTraffic from "./StationTraffic/StationTraffic";
 
 interface IStationData {
   station: TStationWithTraffic;
@@ -47,24 +48,7 @@ const StationData = ({ station }: IStationData) => {
           )}
         </tbody>
       </table>
-      {station && (
-        <div className="station-traffic">
-          <div className="traffic-cont" id="traffic-cont-1">
-            <h3 className="traffic-title">Departures</h3>
-            <TrafficCounter
-              counterKey={1}
-              trafficAmount={station.station_departures}
-            />
-          </div>
-          <div className="traffic-cont" id="traffic-cont-2">
-            <h3 className="traffic-title">Returns</h3>
-            <TrafficCounter
-              counterKey={2}
-              trafficAmount={station.station_returns}
-            />
-          </div>
-        </div>
-      )}
+      <StationTraffic station_id={station.station_id} />
       <Map lat={station.station_coord_y} lng={station.station_coord_x} />
     </>
   );
