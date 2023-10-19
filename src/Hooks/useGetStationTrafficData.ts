@@ -11,7 +11,7 @@ const useGetStationTrafficData = ({
   station_id,
 }: IuseGetStationTrafficData) => {
   const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["getStationInfo", station_id, true],
+    queryKey: ["stationTraffic", station_id],
     queryFn: async (): Promise<TStationTrafficData> => {
       const res = await fetch(
         `${URL}/stations/data?trafficInfo=${station_id}`,
