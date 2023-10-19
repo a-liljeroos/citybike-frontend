@@ -41,6 +41,21 @@
   width: 50px;
 }
 
+.direction-icon {
+  animation: twistReveal 600ms;
+}
+
+@keyframes twistReveal {
+  from {
+    transform: rotate(-180deg);
+    opacity: 0;
+  }
+  to {
+    transform: rotate(0deg);
+    opacity: 1;
+  }
+}
+
 .filter-container {
   width: 100%;
   transition: 100ms;
@@ -51,6 +66,12 @@
 
 .filter-select {
   margin: 0;
+}
+
+.filter-direction-btn {
+  width: 44px;
+  padding-top: 5px;
+  padding-right: 3px;
 }
 
 .station-list-filter {

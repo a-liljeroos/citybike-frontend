@@ -1,6 +1,7 @@
 import React from "react";
 import { useStationContext } from "../../../StationContext";
 import { VscExpandAll } from "react-icons/vsc";
+import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
 import { TStation } from "../../../../../Types";
 
 // this determines the filter options for the station list
@@ -56,24 +57,29 @@ const Filter = ({ viewFilters, setViewFilters }: Ifilter) => {
             );
           })}
         </select>
-        <select
+        <button
+          type="button"
           name="reverse"
-          className="filter-select"
-          defaultValue={sortListDirection.toString()}
-          onChange={(e) => {
-            const reverse = e.target.value === "true" ? true : false;
-            setSortListDirection(reverse);
+          aria-pressed={sortListDirection}
+          className="filter-direction-btn"
+          onClick={() => {
+            setSortListDirection(!sortListDirection);
           }}
         >
-          {stationListFilter.reverse.map((key, value) => {
-            return (
-              <option key={value} value={Object.values(key)[0]}>
-                {Object.keys(key)[0].charAt(0).toUpperCase() +
-                  Object.keys(key)[0].slice(1)}
-              </option>
-            );
-          })}
-        </select>
+          {sortListDirection ? (
+            <TbArrowBigDown
+              className="direction-icon"
+              size={25}
+              color="rgb(75, 75, 75)"
+            />
+          ) : (
+            <TbArrowBigUp
+              className="direction-icon"
+              size={25}
+              color="rgb(75, 75, 75)"
+            />
+          )}
+        </button>
       </form>
       <button
         className="station-details-btn"
