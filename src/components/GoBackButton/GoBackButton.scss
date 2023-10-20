@@ -1,12 +1,11 @@
 @import "./../colors.scss";
 
 .go-back-btn {
-  position: absolute;
   cursor: pointer;
   background-color: $button-color;
   border: none;
   border-radius: 50%;
-  padding: 5px;
+  padding: 6px 6px 5px 5px;
   transition: $button-speed;
   height: $button-height;
   width: $button-height;

@@ -3,6 +3,7 @@ import { useForm, Controller } from "react-hook-form";
 import { useGetStationData, useStationForm } from "../../../../Hooks";
 import Spinner from "../../../Spinner/Spinner";
 import GoBackButton from "../../../GoBackButton/GoBackButton";
+import PageNav from "../../../PageNav/PageNav";
 
 interface IStationForm {
   id?: string | undefined;
@@ -24,10 +25,13 @@ const StationForm = ({ id }: IStationForm) => {
 
   return (
     <>
-      <div className="station-form-nav">
+      <PageNav>
+        <h2 className="station-form-title">Add Station</h2>
+      </PageNav>
+      {/*   <div className="station-form-nav">
         <GoBackButton />
         <h2 className="station-form-title">Add Station</h2>
-      </div>
+      </div> */}
       <div className="station-form-container styled-scrollbar">
         <form
           id="station-form"

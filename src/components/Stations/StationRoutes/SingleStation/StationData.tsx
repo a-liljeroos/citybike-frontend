@@ -4,6 +4,7 @@ import GoBackButton from "../../../GoBackButton/GoBackButton";
 import Map from "./Map/Map";
 import { Link } from "react-router-dom";
 import StationTraffic from "./StationTraffic/StationTraffic";
+import PageNav from "../../../PageNav/PageNav";
 
 interface IStationData {
   station: TStation;
@@ -13,15 +14,14 @@ const StationData = ({ station }: IStationData) => {
   return (
     <>
       {" "}
-      <GoBackButton top={25} left={20} />
-      <h2 className="station-title">{station.station_nimi}</h2>
-      <div className="station-data-options">
+      <PageNav>
         <Link to={`/stations/edit/${station.station_id}`}>
           <button aria-label="edit station" className="edit-btn">
             <FiEdit size={28} color="white" />
           </button>
         </Link>
-      </div>
+      </PageNav>
+      <h2 className="station-title">{station.station_nimi}</h2>
       <table>
         <tbody>
           <tr>
