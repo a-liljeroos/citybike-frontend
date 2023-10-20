@@ -86,8 +86,12 @@ const Filter = ({ viewFilters, setViewFilters }: Ifilter) => {
         onClick={() => {
           setViewDetails(!viewDetails);
         }}
+        style={{ backgroundColor: viewDetails ? "rgb(90, 247, 150)" : "" }}
       >
-        <VscExpandAll size={30} color="rgb(75, 75, 75)" />
+        <VscExpandAll
+          size={30}
+          color={viewDetails ? "rgb(250, 250, 250)" : "rgb(75, 75, 75)"}
+        />
       </button>
     </div>
   );
