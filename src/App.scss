@@ -150,7 +150,7 @@ a {
 table {
   color: $text-color;
   font-size: 18px;
-  padding-block: 20px;
+  padding-block: 15px;
   @media (max-width: 600px) {
     font-size: 14px;
   }
@@ -160,17 +160,16 @@ th {
   font-weight: 800;
   text-align: left;
   text-decoration: underline;
-  width: 110px;
+  width: 25%;
 }
 
 .traffic-cont {
   align-items: center;
-  background-color: white;
+  background-color: $text-color;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   padding: 10px;
-  width: 40%;
+  width: 100%;
   @media (max-width: 600px) {
     padding: 10px 5px 10px 5px;
   }
@@ -178,8 +177,21 @@ th {
 .traffic-title {
   color: $text-color-2;
   text-align: center;
+  animation: trafficTitleReveal 350ms ease-in;
+  padding-top: 3px;
   @media (max-width: 600px) {
-    font-size: 18px;
+    font-size: 17px;
+  }
+}
+
+@keyframes trafficTitleReveal {
+  from {
+    opacity: 0;
+    transform: translateX(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
   }
 }
 
@@ -192,7 +204,7 @@ th {
   text-align: center;
   width: 100px;
   @media (max-width: 600px) {
-    font-size: 17px;
+    font-size: 16px;
     padding: 5px;
   }
 }

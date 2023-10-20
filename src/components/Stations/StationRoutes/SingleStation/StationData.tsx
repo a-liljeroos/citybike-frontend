@@ -21,33 +21,35 @@ const StationData = ({ station }: IStationData) => {
           </button>
         </Link>
       </PageNav>
-      <h2 className="station-title">{station.station_nimi}</h2>
-      <table>
-        <tbody>
-          <tr>
-            <th>Address</th>
-            <td>{station.station_osoite}</td>
-          </tr>
-          <tr>
-            <th>Capacity</th>
-            <td>{station.station_capacity}</td>
-          </tr>
+      <div className="station-data-cont">
+        <h2 className="station-title">{station.station_nimi}</h2>
+        <table>
+          <tbody>
+            <tr>
+              <th>Address</th>
+              <td>{station.station_osoite}</td>
+            </tr>
+            <tr>
+              <th>Capacity</th>
+              <td>{station.station_capacity}</td>
+            </tr>
 
-          {station.station_operator && (
-            <tr>
-              <th>Operator</th>
-              <td>{station.station_operator}</td>
-            </tr>
-          )}
-          {station.station_kaupunki && (
-            <tr>
-              <th>City</th>
-              <td>{station.station_kaupunki}</td>
-            </tr>
-          )}
-        </tbody>
-      </table>
-      <StationTraffic station_id={station.station_id} />
+            {station.station_operator && (
+              <tr>
+                <th>Operator</th>
+                <td>{station.station_operator}</td>
+              </tr>
+            )}
+            {station.station_kaupunki && (
+              <tr>
+                <th>City</th>
+                <td>{station.station_kaupunki}</td>
+              </tr>
+            )}
+          </tbody>
+        </table>
+        <StationTraffic station_id={station.station_id} />
+      </div>
       <Map lat={station.station_coord_y} lng={station.station_coord_x} />
     </>
   );
