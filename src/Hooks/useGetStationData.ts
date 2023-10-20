@@ -16,7 +16,6 @@ const useGetStationData = ({ station_id }: IuseGetStationData) => {
         headers: { "Content-type": "application/json" },
         body: JSON.stringify({
           station_id: station_id,
-          trafficInfo: false,
         }),
       });
 
