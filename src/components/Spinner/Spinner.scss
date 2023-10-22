@@ -10,9 +10,9 @@
 }
 
 .spinner {
-  animation: spin 1s linear infinite;
+  animation: forward 2s infinite ease-in-out;
   color: $color-1;
-  filter: drop-shadow(0px 0px 5px rgba(56, 56, 56, 0.253));
+  filter: drop-shadow(0px 0px 3px rgba(243, 243, 243, 0.685));
 }
 
 .spinner-message {
@@ -39,10 +39,10 @@
 }
 
 .small-spinner {
-  animation: stretch 500ms infinite ease-in-out;
+  animation: forward 500ms infinite ease-in-out;
 }
 
-@keyframes stretch {
+@keyframes forward {
   0% {
     transform: translateX(-5px);
     opacity: 0;
@@ -53,7 +53,7 @@
   }
 
   100% {
-    transform: translateX(2px);
+    transform: translateX(5px);
     opacity: 0;
   }
 }
