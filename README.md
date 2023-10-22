@@ -7,6 +7,7 @@
   <li>Typescript</li>
   <li>HTML / CSS</li>
   <li>Docker</li>
+  <li>Google Maps</li>
   <li>react-query, react-router-dom, react-icons, react-countup, sass</li>
   <li>jest, msw</li>
 </ul>
@@ -15,7 +16,32 @@
 <p>This the frontend for the Citybike API. A small single page application made for learning purposes. I designed the user interface and application logic from scratch. Data fetching is implemented with <a target="_blank" href="https://react-query-v3.tanstack.com/" >react-query</a> which provides loading and error states.</p>
 
 <p> From the navigation bar the user can choose two paths: stations and journeys. </p>
-<p>The station link reveals a list view of citybike stations and by pressing an item it opens a single station view which contains the station name, address, station capacity and the sum of journeys that started and returned from/to the particular station. </p>
+
+<h2>⛽ Stations</h2>
+
+<h3>List view</h3>
+<p>The station link reveals a list view of citybike stations. Each item in the list is a link.</p>
+<p>The list view has a menu section which includes: </p>
+<ul>
+  <li>...New Station button</li>
+  <li>Open settings/filter button</li>
+  <li>Filter with sorting options by: name, capacity, city / asceding, descending </li>
+  <li>Show details button. Each list item displays more data. </li>
+</ul>
+
+<h3>Single station view</h3>
+
+<p>By pressing an item in the list it opens a single station view which contains: </p>
+<ul>
+  <li>...More details about the selected station</li>
+  <li>Sum of journeys that started and returned from/to the station</li>
+  <li>Location on Google Maps</li>
+  <li>Edit station possibilty</li>
+</ul>
+
+
+
+<h2>🚴‍♀️ Journeys</h2>
 
 <p>The journeys link leads to a journey list view with pagination. Pagination is done in the backend and the frontend requests a page per fetch. One page contains 30 journeys. From the list user can read where the journey started from and where it ended to, including the journey duration in minutes and distance in kilometeres. The user can also press a station from the list and it opens the single station view for the pressed station.</p>
 <p>The endpoints this application uses are listed in the <a target="_blank" href="https://github.com/a-liljeroos/citybike-api">API repository.</a> </p>
@@ -23,8 +49,7 @@
 
 <h2>👀 Preview:</h2>
 <span>
-<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/stations.gif?raw=true" />
-<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/journeys.gif?raw=true" />
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/stations-2.gif?raw=true" />
 </span>
 
 <h2>💬 Installation</h2>
