@@ -4,7 +4,7 @@ import { TStation } from "../Types";
 import toast from "react-hot-toast";
 
 interface IuseStationForm {
-  station_id: number;
+  station_id: number | string | undefined;
 }
 
 const useStationForm = ({ station_id }: IuseStationForm) => {

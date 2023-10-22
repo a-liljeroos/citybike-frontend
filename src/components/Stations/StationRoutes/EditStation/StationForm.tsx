@@ -4,18 +4,40 @@ import { useGetStationData, useStationForm } from "../../../../Hooks";
 import Spinner from "../../../Spinner/Spinner";
 import GoBackButton from "../../../GoBackButton/GoBackButton";
 import PageNav from "../../../PageNav/PageNav";
+import { TStation } from "../../../../Types";
+import { useParams } from "react-router-dom";
 
 interface IStationForm {
   id?: string | undefined;
 }
 
 const StationForm = ({ id }: IStationForm) => {
-  const station_id = Number(20);
+  const { station_id } = useParams<{ station_id: string }>();
+
   const { data, isLoading } = useGetStationData({
-    station_id: station_id.toString(),
+    station_id: station_id!,
   });
 
-  const { handleSubmit, control, reset } = useForm({ defaultValues: data });
+  const emptyData: TStation = {
+    station_id: 0,
+    station_nimi: "",
+    station_namn: "",
+    station_name: "",
+    station_osoite: "",
+    station_adress: "",
+    station_kaupunki: "",
+    station_stad: "",
+    station_operator: "",
+    station_capacity: 10,
+    station_coord_x: 0,
+    station_coord_y: 0,
+  };
+
+  const defaultValues = data ? data : emptyData;
+
+  const { handleSubmit, control, reset } = useForm({
+    defaultValues: defaultValues,
+  });
 
   const { mutate, mutateLoading } = useStationForm({ station_id: station_id });
 
