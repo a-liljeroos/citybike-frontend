@@ -8,14 +8,14 @@
   <li>HTML / CSS</li>
   <li>Docker</li>
   <li>Google Maps</li>
-  <li>react-query, react-router-dom, react-icons, react-countup, sass</li>
+  <li><i>react-query, react-router-dom, react-icons, react-countup, sass, react-hot-toast</i></li>
   <li>jest, msw</li>
 </ul>
 
 <br/>
 <p>This the frontend for the Citybike API. A small single page application made for learning purposes. I designed the user interface and application logic from scratch. Data fetching is implemented with <a target="_blank" href="https://react-query-v3.tanstack.com/" >react-query</a> which provides loading and error states.</p>
 
-<p> From the navigation bar the user can choose two paths: stations and journeys. </p>
+<p> From the navigation bar the user can choose two paths: stations and journeys. Both routes use a stateContextProvider of its own. Options set by the user are stored in the browsers local storage.</p>
 
 <h2>⛽ Stations</h2>
 
@@ -25,8 +25,8 @@
 <ul>
   <li>...New Station button</li>
   <li>Open settings/filter button</li>
-  <li>Filter with sorting options by: name, capacity, city / asceding, descending </li>
-  <li>Show details button. Each list item displays more data. </li>
+  <li>Filter with sorting options by: name, capacity, city / ascending, descending </li>
+  <li>Show details button. Each list item displays more data...</li>
 </ul>
 
 <h3>Single station view</h3>
@@ -35,8 +35,8 @@
 <ul>
   <li>...More details about the selected station</li>
   <li>Sum of journeys that started and returned from/to the station</li>
-  <li>Location on Google Maps</li>
-  <li>Edit station possibilty</li>
+  <li>Location on Google Maps with a custom marker</li>
+  <li>Edit station possibilty...</li>
 </ul>
 
 
