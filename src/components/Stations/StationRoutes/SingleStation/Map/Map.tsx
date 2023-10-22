@@ -33,7 +33,7 @@ const Map = ({ lat, lng }: IMap) => {
             position={center}
             icon={{
               url: Icon,
-              scaledSize: new window.google.maps.Size(80, 81),
+              scaledSize: new window.google.maps.Size(60, 61),
             }}
           ></MarkerF>
         </GoogleMap>
