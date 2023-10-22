@@ -13,7 +13,7 @@ const GoUpButton = ({ listElementClassName, size, color }: IGoUpButton) => {
     list?.scrollTo({ top: 0, behavior: "smooth" });
   };
   return (
-    <div className="go-up-btn" onClick={goUp}>
+    <div className="go-up-btn" role="button" onClick={goUp}>
       <TiArrowUpOutline
         size={size ? size : 35}
         color={color ? color : "white"}
