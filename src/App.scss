@@ -104,6 +104,10 @@ a {
   width: 100%;
 }
 
+.item-reveal {
+  animation: reveal 300ms;
+}
+
 .button-font {
   color: $button-text-color;
   font-size: 19px;

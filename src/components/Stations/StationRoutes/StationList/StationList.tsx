@@ -100,11 +100,11 @@ const StationListItem = ({ station, details }: IStationListItem) => {
   if (details) {
     return (
       <div className="list-item station-item-details">
-        <div className="station-details details1">
+        <div className="station-details details1 item-reveal">
           <h5>{station.station_nimi}</h5>
           <p>{station.station_kaupunki}</p>
         </div>
-        <div className="station-details details2">
+        <div className="station-details details2 item-reveal">
           <p>{station.station_capacity}</p>
           <MdPedalBike className="station-details-bike-svg" />
         </div>
@@ -112,7 +112,11 @@ const StationListItem = ({ station, details }: IStationListItem) => {
     );
   }
 
-  return <div className="list-item station-item">{station.station_nimi}</div>;
+  return (
+    <div className="list-item station-item item-reveal">
+      {station.station_nimi}
+    </div>
+  );
 };
 
 export default StationList;
