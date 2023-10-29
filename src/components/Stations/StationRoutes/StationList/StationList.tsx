@@ -1,9 +1,8 @@
 import { useGetStationList } from "../../../../Hooks";
 import { useStationContext } from "../../StationContext";
 import { Link } from "react-router-dom";
-import { LuSettings } from "react-icons/lu";
-import { TiArrowUpOutline } from "react-icons/ti";
 import { MdPedalBike } from "react-icons/md";
+import { RiSettingsLine } from "react-icons/ri";
 import { useState } from "react";
 import Spinner from "../../../Spinner/Spinner";
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
@@ -56,7 +55,7 @@ const StationList = () => {
             <AddButton text="New Station" />
           </Link>
           <button className="station-filter-btn">
-            <LuSettings
+            <RiSettingsLine
               size={26}
               color="rgb(75, 75, 75)"
               onClick={() => {
