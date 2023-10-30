@@ -1,4 +1,5 @@
 import React from "react";
+// icons
 import { IoMdBicycle } from "react-icons/io";
 
 interface ISmallSpinner {

@@ -1,9 +1,11 @@
 import { Routes, Route } from "react-router-dom";
-import StationList from "./StationRoutes/StationList/StationList";
-import SingleStation from "./StationRoutes/SingleStation/SingleStation";
 import { StationContextProvider } from "./StationContext";
-import EditStation from "./StationRoutes/EditStation/EditStation";
+// styles
 import "./Stations.scss";
+// components
+import EditStation from "./StationRoutes/EditStation/EditStation";
+import SingleStation from "./StationRoutes/SingleStation/SingleStation";
+import StationList from "./StationRoutes/StationList/StationList";
 
 const Stations = () => {
   return (

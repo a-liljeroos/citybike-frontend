@@ -1,10 +1,11 @@
-import { TStation } from "../../../../Types";
-import { FiEdit } from "react-icons/fi";
-import GoBackButton from "../../../GoBackButton/GoBackButton";
-import Map from "./Map/Map";
 import { Link } from "react-router-dom";
-import StationTraffic from "./StationTraffic/StationTraffic";
+import { TStation } from "../../../../Types";
+import Map from "./Map/Map";
+// icons
+import { FiEdit } from "react-icons/fi";
+// components
 import PageNav from "../../../PageNav/PageNav";
+import StationTraffic from "./StationTraffic/StationTraffic";
 
 interface IStationData {
   station: TStation;

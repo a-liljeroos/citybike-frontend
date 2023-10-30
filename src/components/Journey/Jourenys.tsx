@@ -1,6 +1,8 @@
-import { Routes, Route } from "react-router-dom";
-import JourneyPages from "./JourneyRoutes/JourneyPages/JourneyPages";
 import { JourneyContextProvider } from "./JourneyContext";
+import { Routes, Route } from "react-router-dom";
+// components
+import JourneyPages from "./JourneyRoutes/JourneyPages/JourneyPages";
+
 const Jourenys = () => {
   return (
     <JourneyContextProvider>

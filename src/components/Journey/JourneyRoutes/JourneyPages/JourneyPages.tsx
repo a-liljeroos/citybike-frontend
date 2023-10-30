@@ -1,9 +1,10 @@
-import { useParams, useNavigate } from "react-router-dom";
 import { useGetJourneyPage } from "../../../../Hooks";
+import { useParams, useNavigate } from "react-router-dom";
+// components
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
-import Spinner from "../../../Spinner/Spinner";
 import JourneyCard from "./JourneyCard";
 import JourneyPageButtons from "./JourneyPageButtons";
+import Spinner from "../../../Spinner/Spinner";
 
 const JourneyPages = () => {
   let { page } = useParams();

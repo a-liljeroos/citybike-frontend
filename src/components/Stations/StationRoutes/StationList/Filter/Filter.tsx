@@ -1,8 +1,9 @@
-import React from "react";
-import { useStationContext } from "../../../StationContext";
-import { VscExpandAll } from "react-icons/vsc";
-import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
 import { TStation } from "../../../../../Types";
+import { useStationContext } from "../../../StationContext";
+import React from "react";
+// icons
+import { TbArrowBigUp, TbArrowBigDown } from "react-icons/tb";
+import { VscExpandAll } from "react-icons/vsc";
 
 // this determines the filter options for the station list
 const stationListFilter = {

@@ -1,16 +1,18 @@
-import { useGetStationList } from "../../../../Hooks";
-import { useStationContext } from "../../StationContext";
 import { Link } from "react-router-dom";
-import { MdPedalBike } from "react-icons/md";
-import { RiSettingsLine } from "react-icons/ri";
-import { useState } from "react";
-import Spinner from "../../../Spinner/Spinner";
-import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
-import AddButton from "../../../AddButton/AddButton";
-import Filter from "./Filter/Filter";
 import { sortObjectArray } from "../../../utilities";
 import { TStation } from "../../../../Types";
+import { useGetStationList } from "../../../../Hooks";
+import { useState } from "react";
+import { useStationContext } from "../../StationContext";
+// icons
+import { MdPedalBike } from "react-icons/md";
+import { RiSettingsLine } from "react-icons/ri";
+// components
+import AddButton from "../../../AddButton/AddButton";
+import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
+import Filter from "./Filter/Filter";
 import GoUpButton from "../../../GoUpButton/GoUpButton";
+import Spinner from "../../../Spinner/Spinner";
 
 const StationList = () => {
   const [viewFilters, setViewFilters] = useState(false);

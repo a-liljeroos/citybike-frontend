@@ -1,5 +1,7 @@
-import { TiArrowUpOutline } from "react-icons/ti";
+// styling
 import "./GoUpButton.scss";
+// icons
+import { TiArrowUpOutline } from "react-icons/ti";
 
 interface IGoUpButton {
   listElementClassName: string;

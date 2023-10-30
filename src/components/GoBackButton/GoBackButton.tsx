@@ -1,5 +1,7 @@
-import { TbArrowBigLeft } from "react-icons/tb";
+// styling
 import "./GoBackButton.scss";
+// icons
+import { TbArrowBigLeft } from "react-icons/tb";
 
 interface IGoBackButton {
   size?: number;

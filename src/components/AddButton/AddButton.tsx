@@ -1,3 +1,4 @@
+// styling
 import "./AddButton.scss";
 
 interface IAddButton {

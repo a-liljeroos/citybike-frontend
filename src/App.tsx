@@ -1,9 +1,11 @@
-import "./App.scss";
-import NavBar from "./components/NavBar/NavBar";
 import { Routes, Route } from "react-router-dom";
+// styles
+import "./App.scss";
+// components
+import Jourenys from "./components/Journey/Jourenys";
+import NavBar from "./components/NavBar/NavBar";
 import NoPage from "./components/NoPage/NoPage";
 import Stations from "./components/Stations/Stations";
-import Jourenys from "./components/Journey/Jourenys";
 
 function App() {
   return (

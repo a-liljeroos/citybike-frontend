@@ -1,6 +1,8 @@
-import "./JourneyStyling.scss";
-import { useNavigate } from "react-router-dom";
 import { TJourney } from "../../../../Types";
+import { useNavigate } from "react-router-dom";
+// styling
+import "./JourneyStyling.scss";
+
 interface IjourneyCard {
   journey: TJourney;
 }

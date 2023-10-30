@@ -1,6 +1,8 @@
-import { ImSpinner5 } from "react-icons/im";
-import { IoMdBicycle } from "react-icons/io";
+// styling
 import "./Spinner.scss";
+// icons
+import { IoMdBicycle } from "react-icons/io";
+
 interface ISpinner {
   message?: string;
 }

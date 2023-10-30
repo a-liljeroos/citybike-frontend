@@ -1,6 +1,6 @@
-import { useQuery } from "react-query";
-import { URL } from "../constants";
 import { TStation } from "../Types";
+import { URL } from "../constants";
+import { useQuery } from "react-query";
 import toast from "react-hot-toast";
 
 interface IuseGetStationData {

@@ -1,11 +1,12 @@
-import "./StationForm.scss";
+import { TStation } from "../../../../Types";
 import { useForm, Controller } from "react-hook-form";
 import { useGetStationData, useStationForm } from "../../../../Hooks";
-import Spinner from "../../../Spinner/Spinner";
-import GoBackButton from "../../../GoBackButton/GoBackButton";
-import PageNav from "../../../PageNav/PageNav";
-import { TStation } from "../../../../Types";
 import { useParams } from "react-router-dom";
+// styling
+import "./StationForm.scss";
+// components
+import Spinner from "../../../Spinner/Spinner";
+import PageNav from "../../../PageNav/PageNav";
 
 interface IStationForm {
   id?: string | undefined;

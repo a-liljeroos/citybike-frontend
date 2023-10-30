@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { useLocalStorage } from "../utilities";
 import { TStation } from "../../Types";
+import { useLocalStorage } from "../utilities";
 
 type TStationContext = {
   viewDetails: boolean;

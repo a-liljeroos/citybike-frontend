@@ -1,9 +1,10 @@
-import { useParams } from "react-router-dom";
 import { useGetStationData } from "../../../../Hooks";
+import { useParams } from "react-router-dom";
+import { useStationContext } from "../../StationContext";
+// components
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import Spinner from "../../../Spinner/Spinner";
 import StationData from "./StationData";
-import { useStationContext } from "../../StationContext";
 
 const SingleStation = () => {
   let { station_id } = useParams();

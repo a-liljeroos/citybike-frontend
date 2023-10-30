@@ -1,4 +1,6 @@
+// styling
 import "./ErrorMsg.scss";
+// icons
 import { BsEmojiFrown } from "react-icons/bs";
 
 interface IErrorMsg {
