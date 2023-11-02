@@ -51,7 +51,13 @@ const StationData = ({ station }: IStationData) => {
         </table>
         <StationTraffic station_id={station.station_id} />
       </div>
-      <Map lat={station.station_coord_y} lng={station.station_coord_x} />
+      {process.env.REACT_APP_GOOGLE_API_KEY ? (
+        <Map lat={station.station_coord_y} lng={station.station_coord_x} />
+      ) : (
+        <div data-testid="map-unavailable" className="map-unavailable">
+          <p>Map is currently unavailable.</p>
+        </div>
+      )}
     </>
   );
 };
