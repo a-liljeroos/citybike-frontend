@@ -11,12 +11,9 @@ const useGetStationData = ({ station_id }: IuseGetStationData) => {
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["getStationInfo", station_id, false],
     queryFn: async (): Promise<TStation> => {
-      const res = await fetch(`${URL}/stations`, {
-        method: "POST",
+      const res = await fetch(`${URL}/stations?station_id=${station_id}`, {
+        method: "GET",
         headers: { "Content-type": "application/json" },
-        body: JSON.stringify({
-          station_id: station_id,
-        }),
       });
 
       return res.json();
