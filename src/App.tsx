@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import { AppContextProvider } from "./AppContext";
+import { AppContextProvider, useAppContext } from "./AppContext";
 // styles
 import "./App.scss";
 // components
@@ -29,6 +29,7 @@ function App() {
 }
 
 const IndexPage = () => {
+  const { totalJourneys } = useAppContext();
   return (
     <div className="page index-page" role="main">
       <p className="index-text">
@@ -39,6 +40,11 @@ const IndexPage = () => {
         Frontend is made with React and the backend API is ExpressJS. The system
         is written with TypeScript and uses PostgreSQL database.
       </p>
+      {totalJourneys !== 0 && (
+        <p className="index-text">
+          There are total of {totalJourneys} journeys in the database.
+        </p>
+      )}
     </div>
   );
 };

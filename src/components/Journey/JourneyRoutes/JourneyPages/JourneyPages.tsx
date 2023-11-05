@@ -1,5 +1,6 @@
 import { useGetJourneyPage } from "../../../../Hooks";
 import { useParams, useNavigate } from "react-router-dom";
+import { useAppContext } from "../../../../AppContext";
 // components
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import JourneyCard from "./JourneyCard";
@@ -7,6 +8,7 @@ import JourneyPageButtons from "./JourneyPageButtons";
 import Spinner from "../../../Spinner/Spinner";
 
 const JourneyPages = () => {
+  const { totalJourneys } = useAppContext();
   let { page } = useParams();
   const navigate = useNavigate();
   if (Number(page) < 1) {
@@ -14,6 +16,7 @@ const JourneyPages = () => {
   }
   const { data, isLoading, isError, error } = useGetJourneyPage({
     page: Number(page),
+    totalJourneys,
   });
   if (isLoading) {
     return (

@@ -5,6 +5,7 @@ import toast from "react-hot-toast";
 
 interface IuseGetJourneyPage {
   page: number;
+  totalJourneys: number;
 }
 
 type JourneyPageResponse = {
@@ -17,7 +18,7 @@ type JourneyPageResponse = {
   };
 };
 
-const useGetJourneyPage = ({ page }: IuseGetJourneyPage) => {
+const useGetJourneyPage = ({ page, totalJourneys }: IuseGetJourneyPage) => {
   const pageNumber = Math.ceil(page);
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["journeys", pageNumber],
@@ -27,7 +28,18 @@ const useGetJourneyPage = ({ page }: IuseGetJourneyPage) => {
         headers: { "Content-type": "application/json" },
       });
 
-      return res.json();
+      const data = await res.json();
+
+      const dataWithTotalJourneys: JourneyPageResponse = {
+        ...data,
+        pagination: {
+          ...data.pagination,
+          totalJourneys: totalJourneys,
+          totalPages: Math.ceil(totalJourneys / data.pagination.pageSize),
+        },
+      };
+
+      return dataWithTotalJourneys;
     },
     onError: (error) => {
       toast.error(`Service Unavailable.`);

@@ -1,6 +1,8 @@
 import { createContext, ReactNode, useContext } from "react";
-
-type TJourneyContext = {};
+import { useAppContext } from "../../AppContext";
+type TJourneyContext = {
+  totalJourneys: number;
+};
 
 const JourneyContext = createContext<TJourneyContext>({} as TJourneyContext);
 
@@ -13,7 +15,14 @@ type TJourneyContextProvider = {
 };
 
 export function JourneyContextProvider({ children }: TJourneyContextProvider) {
+  const { totalJourneys } = useAppContext();
   return (
-    <JourneyContext.Provider value={{}}>{children}</JourneyContext.Provider>
+    <JourneyContext.Provider
+      value={{
+        totalJourneys,
+      }}
+    >
+      {children}
+    </JourneyContext.Provider>
   );
 }
