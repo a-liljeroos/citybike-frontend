@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import { AppContextProvider } from "./AppContext";
 // styles
 import "./App.scss";
 // components
@@ -9,19 +10,21 @@ import Stations from "./components/Stations/Stations";
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <NavBar />
-      </header>
-      <main className="bg-color-2">
-        <Routes>
-          <Route index element={<IndexPage />} />
-          <Route index path="stations/*" element={<Stations />} />
-          <Route path="journeys/*" element={<Jourenys />} />
-          <Route path="*" element={<NoPage />} />
-        </Routes>
-      </main>
-    </div>
+    <AppContextProvider>
+      <div className="App">
+        <header>
+          <NavBar />
+        </header>
+        <main className="bg-color-2">
+          <Routes>
+            <Route index element={<IndexPage />} />
+            <Route index path="stations/*" element={<Stations />} />
+            <Route path="journeys/*" element={<Jourenys />} />
+            <Route path="*" element={<NoPage />} />
+          </Routes>
+        </main>
+      </div>
+    </AppContextProvider>
   );
 }
 
