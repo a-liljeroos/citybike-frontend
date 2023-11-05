@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom";
 // styling
 import "./GoBackButton.scss";
 // icons
@@ -9,10 +10,11 @@ interface IGoBackButton {
 }
 
 const GoBackButton = ({ size, style }: IGoBackButton) => {
+  const navigate = useNavigate();
   return (
     <button
       onClick={() => {
-        window.history.back();
+        navigate(-1);
       }}
       className="go-back-btn"
       style={{ ...style }}
