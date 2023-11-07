@@ -7,6 +7,7 @@ import JourneyCard from "./JourneyCard";
 import JourneyPageButtons from "./JourneyPageButtons";
 import Spinner from "../../../Spinner/Spinner";
 import PageList from "../../../PageList/PageList";
+import Page from "../../../Page/Page";
 
 const JourneyPages = () => {
   const { totalJourneys } = useAppContext();
@@ -21,22 +22,22 @@ const JourneyPages = () => {
   });
   if (isLoading) {
     return (
-      <div className="page">
+      <Page>
         <Spinner />
-      </div>
+      </Page>
     );
   }
 
   if (isError || !data) {
     return (
-      <div className="page">
+      <Page>
         <ErrorMsg message={error.message} />
-      </div>
+      </Page>
     );
   }
 
   return (
-    <div className="page">
+    <Page dataTestId="journey-pages">
       <JourneyPageButtons {...data.pagination} />
       <PageList>
         {data?.journeys.map((journey, key) => {
@@ -47,7 +48,7 @@ const JourneyPages = () => {
           );
         })}
       </PageList>
-    </div>
+    </Page>
   );
 };
 

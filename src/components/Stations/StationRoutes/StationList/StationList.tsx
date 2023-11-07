@@ -13,6 +13,7 @@ import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import Filter from "./Filter/Filter";
 import GoUpButton from "../../../GoUpButton/GoUpButton";
 import Spinner from "../../../Spinner/Spinner";
+import Page from "../../../Page/Page";
 import PageList from "../../../PageList/PageList";
 
 const StationList = () => {
@@ -29,16 +30,16 @@ const StationList = () => {
   const { data, isLoading, isError } = useGetStationList();
   if (isLoading || !data) {
     return (
-      <div className="page">
+      <Page>
         <Spinner />
-      </div>
+      </Page>
     );
   }
   if (isError) {
     return (
-      <div className="page">
+      <Page>
         <ErrorMsg />
-      </div>
+      </Page>
     );
   }
 
@@ -51,7 +52,7 @@ const StationList = () => {
   });
 
   return (
-    <div className="page" data-testid="stations-list">
+    <Page dataTestId="station-pages">
       <div className="station-nav-container">
         <div className="station-nav-box">
           <Link to={"/stations/edit/new"}>
@@ -88,7 +89,7 @@ const StationList = () => {
         })}
       </PageList>
       <GoUpButton listElementClassName="list" />
-    </div>
+    </Page>
   );
 };
 

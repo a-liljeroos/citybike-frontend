@@ -5,6 +5,7 @@ import "./App.scss";
 // components
 import Jourenys from "./components/Journey/Jourenys";
 import NavBar from "./components/NavBar/NavBar";
+import Page from "./components/Page/Page";
 import NoPage from "./components/NoPage/NoPage";
 import Stations from "./components/Stations/Stations";
 
@@ -31,7 +32,7 @@ function App() {
 const IndexPage = () => {
   const { totalJourneys } = useAppContext();
   return (
-    <div className="page index-page" role="main">
+    <Page classNames="index-page">
       <p className="index-text">
         This is a website where you can browse Helsinki CityBike travel data
         from 1.5. to 31.7.2021.
@@ -45,7 +46,7 @@ const IndexPage = () => {
           There are total of {totalJourneys} journeys in the database.
         </p>
       )}
-    </div>
+    </Page>
   );
 };
 
