@@ -58,10 +58,13 @@ const StationList = () => {
           <Link to={"/stations/edit/new"}>
             <AddButton text="New Station" />
           </Link>
-          <button className="station-filter-btn">
+          <button
+            className={`station-filter-btn ${viewFilters && " button-active"}`}
+          >
             <RiSettingsLine
+              className="buttoncolor-change"
               size={26}
-              color="rgb(75, 75, 75)"
+              color={"rgb(75, 75, 75)"}
               onClick={() => {
                 setViewFilters(!viewFilters);
               }}
