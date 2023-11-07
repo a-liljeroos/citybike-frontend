@@ -33,16 +33,28 @@ const IndexPage = () => {
   const { totalJourneys } = useAppContext();
   return (
     <Page classNames="index-page">
-      <p className="index-text">
+      <p
+        className="index-text"
+        style={{ textAlign: "right", borderLeft: "5px solid rgb(85, 85, 85)" }}
+      >
         This is a website where you can browse Helsinki CityBike travel data
         from 1.5. to 31.7.2021.
       </p>
-      <p className="index-text">
+      <p
+        className="index-text"
+        style={{ borderRight: "5px solid rgb(85, 85, 85)" }}
+      >
         Frontend is made with React and the backend API is ExpressJS. The system
         is written with TypeScript and uses PostgreSQL database.
       </p>
       {totalJourneys !== 0 && (
-        <p className="index-text">
+        <p
+          className="index-text"
+          style={{
+            textAlign: "right",
+            borderLeft: "5px solid rgb(85, 85, 85)",
+          }}
+        >
           There are total of {totalJourneys} journeys in the database.
         </p>
       )}
