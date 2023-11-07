@@ -6,6 +6,7 @@ import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import JourneyCard from "./JourneyCard";
 import JourneyPageButtons from "./JourneyPageButtons";
 import Spinner from "../../../Spinner/Spinner";
+import PageList from "../../../PageList/PageList";
 
 const JourneyPages = () => {
   const { totalJourneys } = useAppContext();
@@ -37,7 +38,7 @@ const JourneyPages = () => {
   return (
     <div className="page">
       <JourneyPageButtons {...data.pagination} />
-      <div className="list styled-scrollbar">
+      <PageList>
         {data?.journeys.map((journey, key) => {
           return (
             <div key={key} className="list-item">
@@ -45,7 +46,7 @@ const JourneyPages = () => {
             </div>
           );
         })}
-      </div>
+      </PageList>
     </div>
   );
 };

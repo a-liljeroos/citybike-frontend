@@ -3,7 +3,7 @@
 .go-up-btn {
   position: absolute;
   right: 50px;
-  bottom: 25px;
+  bottom: -10px;
   @media (max-width: 600px) {
     right: 30px;
   }
@@ -16,6 +16,7 @@
   padding: 7px;
   transition: $button-speed;
   width: 50px;
+  z-index: 20;
 }
 
 .go-up-btn:active {

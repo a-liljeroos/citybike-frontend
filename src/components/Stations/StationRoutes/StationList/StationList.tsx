@@ -13,6 +13,7 @@ import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import Filter from "./Filter/Filter";
 import GoUpButton from "../../../GoUpButton/GoUpButton";
 import Spinner from "../../../Spinner/Spinner";
+import PageList from "../../../PageList/PageList";
 
 const StationList = () => {
   const [viewFilters, setViewFilters] = useState(false);
@@ -70,8 +71,7 @@ const StationList = () => {
           <Filter viewFilters={viewFilters} setViewFilters={setViewFilters} />
         </div>
       </div>
-
-      <div className="list styled-scrollbar station-list">
+      <PageList>
         {stations.map((station, key) => {
           return (
             <Link
@@ -86,8 +86,8 @@ const StationList = () => {
             </Link>
           );
         })}
-      </div>
-      <GoUpButton listElementClassName="station-list" />
+      </PageList>
+      <GoUpButton listElementClassName="list" />
     </div>
   );
 };

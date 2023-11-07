@@ -43,6 +43,7 @@
 
 .journey-usage {
   padding: 5px;
+  z-index: 5;
 }
 
 .journey-direction {
@@ -72,11 +73,11 @@
 }
 
 .journey-pages {
+  z-index: 100;
   align-items: center;
   color: $text-color;
   display: flex;
   gap: 10px;
-  height: 140px;
   justify-content: center;
   margin-bottom: 10px;
   padding: 10px;

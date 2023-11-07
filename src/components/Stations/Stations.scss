@@ -4,6 +4,7 @@
   display: flex;
   flex-direction: column;
   width: 100%;
+  z-index: 10;
 }
 
 .station-nav-box {
@@ -205,6 +206,12 @@ $filter-height: 50px;
   @media (max-width: 500px) {
     font-size: 15px;
   }
+}
+
+.station-item:active {
+  background-color: $midtone;
+  color: $text-color;
+  cursor: pointer;
 }
 .station-title {
   color: $text-color;
