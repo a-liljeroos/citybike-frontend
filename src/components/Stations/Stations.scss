@@ -187,7 +187,9 @@ $filter-height: 50px;
 }
 
 .station-data-cont {
-  width: 95%;
+  width: 100%;
+  padding-inline: 10px;
+  padding-top: 10px;
   display: flex;
   flex-direction: column;
 }

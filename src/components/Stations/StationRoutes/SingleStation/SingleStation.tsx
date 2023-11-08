@@ -31,7 +31,7 @@ const SingleStation = () => {
   }
 
   return (
-    <div className="page page-expanded">
+    <div className="page">
       <StationData station={data} />
     </div>
   );

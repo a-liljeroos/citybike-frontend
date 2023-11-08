@@ -5,6 +5,7 @@ import Map from "./Map/Map";
 import { FiEdit } from "react-icons/fi";
 // components
 import PageNav from "../../../PageNav/PageNav";
+import PageList from "../../../PageList/PageList";
 import StationTraffic from "./StationTraffic/StationTraffic";
 
 interface IStationData {
@@ -22,42 +23,44 @@ const StationData = ({ station }: IStationData) => {
           </button>
         </Link>
       </PageNav>
-      <div className="station-data-cont">
-        <h2 className="station-title">{station.station_nimi}</h2>
-        <table>
-          <tbody>
-            <tr>
-              <th>Address</th>
-              <td>{station.station_osoite}</td>
-            </tr>
-            <tr>
-              <th>Capacity</th>
-              <td>{station.station_capacity}</td>
-            </tr>
+      <PageList>
+        <div className="station-data-cont">
+          <h2 className="station-title">{station.station_nimi}</h2>
+          <table>
+            <tbody>
+              <tr>
+                <th>Address</th>
+                <td>{station.station_osoite}</td>
+              </tr>
+              <tr>
+                <th>Capacity</th>
+                <td>{station.station_capacity}</td>
+              </tr>
 
-            {station.station_operator && (
-              <tr>
-                <th>Operator</th>
-                <td>{station.station_operator}</td>
-              </tr>
-            )}
-            {station.station_kaupunki && (
-              <tr>
-                <th>City</th>
-                <td>{station.station_kaupunki}</td>
-              </tr>
-            )}
-          </tbody>
-        </table>
-        <StationTraffic station_id={station.station_id} />
-      </div>
-      {process.env.REACT_APP_GOOGLE_API_KEY ? (
-        <Map lat={station.station_coord_y} lng={station.station_coord_x} />
-      ) : (
-        <div data-testid="map-unavailable" className="map-unavailable">
-          <p>Map is currently unavailable.</p>
+              {station.station_operator && (
+                <tr>
+                  <th>Operator</th>
+                  <td>{station.station_operator}</td>
+                </tr>
+              )}
+              {station.station_kaupunki && (
+                <tr>
+                  <th>City</th>
+                  <td>{station.station_kaupunki}</td>
+                </tr>
+              )}
+            </tbody>
+          </table>
+          <StationTraffic station_id={station.station_id} />
         </div>
-      )}
+        {process.env.REACT_APP_GOOGLE_API_KEY ? (
+          <Map lat={station.station_coord_y} lng={station.station_coord_x} />
+        ) : (
+          <div data-testid="map-unavailable" className="map-unavailable">
+            <p>Map is currently unavailable.</p>
+          </div>
+        )}
+      </PageList>
     </>
   );
 };
