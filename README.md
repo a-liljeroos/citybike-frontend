@@ -39,8 +39,6 @@
   <li>Edit station possibilty...</li>
 </ul>
 
-
-
 <h2>🚴‍♀️ Journeys</h2>
 
 <p>The journeys link leads to a journey list view with pagination. Pagination is done in the backend and the frontend requests a page per fetch. One page contains 30 journeys. From the list user can read where the journey started from and where it ended to, including the journey duration in minutes and distance in kilometeres. The user can also press a station from the list and it opens the single station view for the pressed station.</p>
@@ -49,7 +47,7 @@
 
 <h2>👀 Preview:</h2>
 <span>
-<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/stations-2.gif?raw=true" />
+<image src="https://github.com/a-liljeroos/citybike-frontend/blob/main/preview_images/pages.PNG?raw=true" />
 </span>
 
 <h2>💬 Installation</h2>
