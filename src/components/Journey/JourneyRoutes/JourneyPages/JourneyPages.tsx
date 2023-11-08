@@ -8,6 +8,7 @@ import JourneyPageButtons from "./JourneyPageButtons";
 import Spinner from "../../../Spinner/Spinner";
 import PageList from "../../../PageList/PageList";
 import Page from "../../../Page/Page";
+import PageNav from "../../../PageNav/PageNav";
 
 const JourneyPages = () => {
   const { totalJourneys } = useAppContext();
@@ -38,7 +39,9 @@ const JourneyPages = () => {
 
   return (
     <Page dataTestId="journey-pages">
-      <JourneyPageButtons {...data.pagination} />
+      <PageNav>
+        <JourneyPageButtons {...data.pagination} />
+      </PageNav>
       <PageList>
         {data?.journeys.map((journey, key) => {
           return (

@@ -23,7 +23,8 @@
   box-shadow: 0px 0px 5px $shadow;
   cursor: pointer;
   height: $button-height;
-  padding-top: 3px;
+  padding-top: 4px;
+  padding-right: 3px;
   transition: $button-speed;
   width: 50px;
 }
@@ -70,7 +71,7 @@
 .filter-direction-btn {
   width: 44px;
   padding-top: 5px;
-  padding-right: 3px;
+  padding-right: 2px;
 }
 
 .station-list-filter {
