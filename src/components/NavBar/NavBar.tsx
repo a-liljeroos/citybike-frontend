@@ -26,7 +26,7 @@ const NavBar = () => {
             <li className={"nav-link"}>Stations</li>
           </NavLink>
           <NavLink
-            to="journeys/1"
+            to="journeys"
             id="journeys-link"
             className={({ isActive, isPending }) =>
               isPending ? "nav-link-a" : isActive ? "nav-link-active" : ""
