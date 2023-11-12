@@ -3,7 +3,7 @@ import { GoogleMap, MarkerF, useLoadScript } from "@react-google-maps/api";
 // styling
 import "./Map.scss";
 // icons
-import Icon from "./icon.png";
+import Icon from "../../../../Icons/icon.png";
 
 // create .env file in root folder and add REACT_APP_GOOGLE_API_KEY=your_api_key
 // https://developers.google.com/maps/documentation/javascript/get-api-key

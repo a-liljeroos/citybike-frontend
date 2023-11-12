@@ -51,22 +51,6 @@ main {
   height: 400px;
 }
 
-.index-page {
-  padding-top: 60px;
-}
-
-.index-text {
-  color: $text-color;
-  padding: 20px;
-  text-align: left;
-  margin-bottom: 30px;
-  @media (max-width: 500px) {
-    padding: 20px;
-    width: 80%;
-  }
-  animation: text-reveal 700ms ease-out;
-}
-
 @keyframes text-reveal {
   from {
     opacity: 0;
