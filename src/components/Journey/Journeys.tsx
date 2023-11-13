@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useNavigate, useLocation, useParams } from "react-router-dom";
 // components
 import JourneyPages from "./JourneyRoutes/JourneyPages/JourneyPages";
+import NoPage from "../NoPage/NoPage";
 
 const Journeys = () => {
   let { page } = useParams();
@@ -19,18 +20,10 @@ const Journeys = () => {
     <JourneyContextProvider>
       <Routes>
         <Route index path=":page" element={<JourneyPages />} />
-        <Route path="*" element={<NoRouteMatch />} />
+        <Route path="*" element={<NoPage redirectTo="/journeys/1" />} />
       </Routes>
     </JourneyContextProvider>
   );
-};
-
-const NoRouteMatch = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    navigate("/journeys/1");
-  }, []);
-  return <></>;
 };
 
 export default Journeys;
