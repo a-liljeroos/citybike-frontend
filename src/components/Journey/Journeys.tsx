@@ -1,15 +1,16 @@
 import { JourneyContextProvider } from "./JourneyContext";
 import { Routes, Route } from "react-router-dom";
 import { useEffect } from "react";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate, useLocation, useParams } from "react-router-dom";
 // components
 import JourneyPages from "./JourneyRoutes/JourneyPages/JourneyPages";
 
-const Jourenys = () => {
+const Journeys = () => {
+  let { page } = useParams();
   const navigate = useNavigate();
   const prevRoute = useLocation();
   useEffect(() => {
-    if (prevRoute.pathname === "/journeys") {
+    if (prevRoute.pathname === "/journeys" || page === undefined) {
       navigate("/journeys/1");
     }
   }, []);
@@ -18,9 +19,18 @@ const Jourenys = () => {
     <JourneyContextProvider>
       <Routes>
         <Route index path=":page" element={<JourneyPages />} />
+        <Route path="*" element={<NoRouteMatch />} />
       </Routes>
     </JourneyContextProvider>
   );
 };
 
-export default Jourenys;
+const NoRouteMatch = () => {
+  const navigate = useNavigate();
+  useEffect(() => {
+    navigate("/journeys/1");
+  }, []);
+  return <></>;
+};
+
+export default Journeys;

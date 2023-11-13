@@ -5,7 +5,7 @@ import "./App.scss";
 // icons
 import Icon from "./components/Icons/icon.png";
 // components
-import Jourenys from "./components/Journey/Jourenys";
+import Journeys from "./components/Journey/Journeys";
 import NavBar from "./components/NavBar/NavBar";
 import NoPage from "./components/NoPage/NoPage";
 import Stations from "./components/Stations/Stations";
@@ -22,7 +22,7 @@ function App() {
           <Routes>
             <Route index element={<LandingPage />} />
             <Route index path="stations/*" element={<Stations />} />
-            <Route path="journeys/*" element={<Jourenys />} />
+            <Route path="journeys/*" element={<Journeys />} />
             <Route path="*" element={<NoPage />} />
           </Routes>
         </main>

@@ -1,55 +1,28 @@
-import { useGetJourneyPage } from "../../../../Hooks";
-import { useParams, useNavigate } from "react-router-dom";
-import { useAppContext } from "../../../../AppContext";
+import { useEffect } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 // components
-import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
-import JourneyCard from "./JourneyCard";
+import JourneyList from "./JourneyList";
 import JourneyPageButtons from "./JourneyPageButtons";
-import Spinner from "../../../Spinner/Spinner";
-import PageList from "../../../PageList/PageList";
 import Page from "../../../Page/Page";
+import PageList from "../../../PageList/PageList";
 import PageNav from "../../../PageNav/PageNav";
 
 const JourneyPages = () => {
-  const { totalJourneys } = useAppContext();
   let { page } = useParams();
   const navigate = useNavigate();
-  if (Number(page) < 1) {
-    navigate("/journeys/1");
-  }
-  const { data, isLoading, isError, error } = useGetJourneyPage({
-    page: Number(page),
-    totalJourneys,
-  });
-  if (isLoading) {
-    return (
-      <Page>
-        <Spinner />
-      </Page>
-    );
-  }
-
-  if (isError || !data) {
-    return (
-      <Page>
-        <ErrorMsg message={error.message} />
-      </Page>
-    );
-  }
+  useEffect(() => {
+    if (!/^\d+$/.test(page!.toString())) {
+      navigate("/journeys/1");
+    }
+  }, [page]);
 
   return (
     <Page dataTestId="journey-pages">
       <PageNav>
-        <JourneyPageButtons {...data.pagination} />
+        <JourneyPageButtons />
       </PageNav>
       <PageList>
-        {data?.journeys.map((journey, key) => {
-          return (
-            <div key={key} className="list-item">
-              <JourneyCard journey={journey} />
-            </div>
-          );
-        })}
+        <JourneyList page={page} />
       </PageList>
     </Page>
   );
