@@ -18,12 +18,13 @@
   }
 }
 
-$index-page-border: 10px dashed rgb(90, 247, 150);
+$index-page-border: 10px dashed $color-1;
+$index-page-border-white: 10px dashed $button-color;
 
 .index-text-top {
   position: relative;
   width: 40%;
-  border-right: $index-page-border;
+  border-right: $index-page-border-white;
   border-bottom: $index-page-border;
   border-top-right-radius: 0;
   border-bottom-left-radius: 0;
@@ -94,8 +95,8 @@ $index-page-border: 10px dashed rgb(90, 247, 150);
   translate: translateX(-40%) translateY(-40px);
   width: 0;
   height: 100%;
-  border-top: $index-page-border;
-  border-right: $index-page-border;
+  border-top: $index-page-border-white;
+  border-right: $index-page-border-white;
   border-top-left-radius: 0px;
   border-bottom-right-radius: 0px;
 }
