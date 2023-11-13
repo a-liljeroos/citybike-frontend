@@ -31,11 +31,7 @@ const SingleStation = () => {
   }
 
   if (isError || !data) {
-    return (
-      <div className="page">
-        <ErrorMsg message={error.message} />
-      </div>
-    );
+    return <ErrorMsg message={error.message} />;
   }
 
   return (

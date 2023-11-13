@@ -15,7 +15,9 @@ const useGetStationData = ({ station_id }: IuseGetStationData) => {
         method: "GET",
         headers: { "Content-type": "application/json" },
       });
-
+      if (!res.ok) {
+        throw new Error("/stations");
+      }
       return res.json();
     },
     onError: (error) => {

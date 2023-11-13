@@ -9,7 +9,7 @@ const CustomToaster = () => {
       <Toaster
         toastOptions={{
           className: "toast",
-          duration: 10000,
+          duration: 4000,
           error: {
             iconTheme: {
               primary: "#ee7272",

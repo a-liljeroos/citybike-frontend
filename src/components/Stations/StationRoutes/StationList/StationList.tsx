@@ -27,20 +27,16 @@ const StationList = () => {
     setSpinnerMessage,
   } = useStationContext();
 
-  const { data, isLoading, isError } = useGetStationList();
-  if (isLoading || !data) {
+  const { data, isLoading, isError, error } = useGetStationList();
+  if (isLoading) {
     return (
       <Page>
         <Spinner />
       </Page>
     );
   }
-  if (isError) {
-    return (
-      <Page>
-        <ErrorMsg />
-      </Page>
-    );
+  if (isError || !data) {
+    return <ErrorMsg message={error.message} />;
   }
 
   // sorting

@@ -28,6 +28,10 @@ const useGetJourneyPage = ({ page, totalJourneys }: IuseGetJourneyPage) => {
         headers: { "Content-type": "application/json" },
       });
 
+      if (!res.ok) {
+        throw new Error("/");
+      }
+
       const data = await res.json();
 
       const dataWithTotalJourneys: JourneyPageResponse = {
