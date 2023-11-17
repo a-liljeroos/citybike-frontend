@@ -1,5 +1,4 @@
 {
-  "station_fid": 37,
   "station_id": 573,
   "station_nimi": "Urheilupuisto (M)",
   "station_namn": "Idrottsparken (M)",
@@ -11,7 +10,5 @@
   "station_operator": "CityBike Finland",
   "station_capacity": 28,
   "station_coord_x": "24.779428",
-  "station_coord_y": "60.17465",
-  "station_departures": "13120",
-  "station_returns": "13522"
+  "station_coord_y": "60.17465"
 }

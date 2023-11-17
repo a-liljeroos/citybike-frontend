@@ -1,6 +1,19 @@
 [
   {
-    "station_fid": 448,
+    "station_id": 573,
+    "station_nimi": "Urheilupuisto (M)",
+    "station_namn": "Idrottsparken (M)",
+    "station_name": "Sports Park (M)",
+    "station_osoite": "Jousenpuistonkatu 4",
+    "station_adress": "Bågparksgatan 4",
+    "station_kaupunki": "Espoo",
+    "station_stad": "Esbo",
+    "station_operator": "CityBike Finland",
+    "station_capacity": 28,
+    "station_coord_x": "24.779428",
+    "station_coord_y": "60.17465"
+  },
+  {
     "station_id": 396,
     "station_nimi": "Malminkartanonhuippu",
     "station_namn": "Malmgårdstoppen",
@@ -15,7 +28,6 @@
     "station_coord_y": "60.2504077926351"
   },
   {
-    "station_fid": 449,
     "station_id": 397,
     "station_nimi": "Hankasuontie",
     "station_namn": "Hankmossvägen",
@@ -30,7 +42,6 @@
     "station_coord_y": "60.2447437736882"
   },
   {
-    "station_fid": 450,
     "station_id": 398,
     "station_nimi": "Ajomiehentie",
     "station_namn": "Körkarlsvägen",
@@ -45,7 +56,6 @@
     "station_coord_y": "60.2388821009165"
   },
   {
-    "station_fid": 451,
     "station_id": 399,
     "station_nimi": "Vähäntuvantie",
     "station_namn": "Lillstuvägen",
@@ -60,7 +70,6 @@
     "station_coord_y": "60.2324510345281"
   },
   {
-    "station_fid": 452,
     "station_id": 400,
     "station_nimi": "Kuusisaari",
     "station_namn": "Granö",
@@ -75,7 +84,6 @@
     "station_coord_y": "60.1845083389847"
   },
   {
-    "station_fid": 453,
     "station_id": 401,
     "station_nimi": "Koivusaari (M)",
     "station_namn": "Björkholmens metrostation",
@@ -90,7 +98,6 @@
     "station_coord_y": "60.1633863116225"
   },
   {
-    "station_fid": 454,
     "station_id": 402,
     "station_nimi": "Bermudankuja",
     "station_namn": "Bermudagränden",
@@ -105,7 +112,6 @@
     "station_coord_y": "60.1549042600429"
   },
   {
-    "station_fid": 455,
     "station_id": 403,
     "station_nimi": "Verkkosaari",
     "station_namn": "Nätholmen",
@@ -120,7 +126,6 @@
     "station_coord_y": "60.1895561753156"
   },
   {
-    "station_fid": 456,
     "station_id": 404,
     "station_nimi": "Sompasaari",
     "station_namn": "Sumparn",
@@ -135,7 +140,6 @@
     "station_coord_y": "60.1829308185667"
   },
   {
-    "station_fid": 457,
     "station_id": 405,
     "station_nimi": "Jollas",
     "station_namn": "Jollas",

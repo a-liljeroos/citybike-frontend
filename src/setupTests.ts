@@ -13,3 +13,7 @@ afterEach(() => {
 afterAll(() => {
   server.close();
 });
+
+server.events.on("request:start", (req) => {
+  console.log(`[request:start] ${req.method} ${req.url.href}`);
+});
