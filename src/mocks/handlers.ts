@@ -1,10 +1,6 @@
 import { rest } from "msw";
 import { URL } from "../constants";
-import allStations from "./TestDatabase/AllStations.json";
-import singleStation from "./TestDatabase/SingleStation.json";
-import singleStationTrafficData from "./TestDatabase/SingleStationTrafficData.json";
-import journeyPage1 from "./TestDatabase/JourneyPage1.json";
-import journeyPage2 from "./TestDatabase/JourneyPage2.json";
+import * as testDatabase from "./TestDatabase/testDatabase";
 
 const Joi = require("joi");
 
@@ -22,11 +18,11 @@ export const handlers = [
     if (Number(station_id) !== 573) {
       return res(ctx.status(404));
     }
-    return res(ctx.status(200), ctx.json(singleStation));
+    return res(ctx.status(200), ctx.json(testDatabase.singleStation));
   }),
   //---------------------------------------------------
   rest.get(`${URL}/stations/all`, (req, res, ctx) => {
-    return res(ctx.status(200), ctx.json(allStations));
+    return res(ctx.status(200), ctx.json(testDatabase.allStations));
   }),
   //---------------------------------------------------
   rest.get(`${URL}/stations/data`, (req, res, ctx) => {
@@ -37,11 +33,14 @@ export const handlers = [
     if (Number(trafficInfo) !== 573) {
       return res(ctx.status(404));
     }
-    return res(ctx.status(200), ctx.json(singleStationTrafficData));
+    return res(
+      ctx.status(200),
+      ctx.json(testDatabase.singleStationTrafficData)
+    );
   }),
   //---------------------------------------------------
   rest.put(`${URL}/stations/edit`, (req, res, ctx) => {
-    return res(ctx.status(201), ctx.json(singleStation));
+    return res(ctx.status(201), ctx.json(testDatabase.singleStation));
   }),
   //---------------------------------------------------
   //
@@ -59,10 +58,10 @@ export const handlers = [
       return res(ctx.status(400));
     }
     if (Number(page) === 1) {
-      return res(ctx.status(200), ctx.json(journeyPage1));
+      return res(ctx.status(200), ctx.json(testDatabase.journeyPage1));
     }
     if (Number(page) === 2) {
-      return res(ctx.status(200), ctx.json(journeyPage2));
+      return res(ctx.status(200), ctx.json(testDatabase.journeyPage2));
     }
     return res(ctx.status(404));
   }),
