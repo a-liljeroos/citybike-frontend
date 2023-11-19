@@ -14,7 +14,7 @@ const useGetStationTrafficData = ({
     queryKey: ["stationTraffic", station_id],
     queryFn: async (): Promise<TStationTrafficData> => {
       const res = await fetch(
-        `${URL}/stations/data?trafficInfo=${station_id}`,
+        `${URL}/stations/trafficinfo?station_id=${station_id}`,
         {
           method: "GET",
           headers: { "Content-type": "application/json" },

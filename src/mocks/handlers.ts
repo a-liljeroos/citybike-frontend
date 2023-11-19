@@ -25,12 +25,12 @@ export const handlers = [
     return res(ctx.status(200), ctx.json(testDatabase.allStations));
   }),
   //---------------------------------------------------
-  rest.get(`${URL}/stations/data`, (req, res, ctx) => {
-    const trafficInfo = req.url.searchParams.get("trafficInfo");
-    if (!trafficInfo) {
+  rest.get(`${URL}/stations/trafficinfo`, (req, res, ctx) => {
+    const station_id = req.url.searchParams.get("station_id");
+    if (!station_id) {
       return res(ctx.status(400));
     }
-    if (Number(trafficInfo) !== 573) {
+    if (Number(station_id) !== 573) {
       return res(ctx.status(404));
     }
     return res(
