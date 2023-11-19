@@ -9,7 +9,7 @@ interface ISmallSpinner {
 
 const SmallSpinner = ({ size, color }: ISmallSpinner) => {
   return (
-    <div className="small-spinner-cont">
+    <div className="small-spinner-cont" data-testid="spinner">
       <IoMdBicycle
         className="small-spinner"
         size={size ? size : 20}
