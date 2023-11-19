@@ -8,10 +8,10 @@ import { useStationContext } from "../../StationContext";
 import { MdPedalBike } from "react-icons/md";
 import { RiSettingsLine } from "react-icons/ri";
 // components
-import AddButton from "../../../AddButton/AddButton";
+import AddButton from "../../../Buttons/AddButton/AddButton";
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import Filter from "./Filter/Filter";
-import GoUpButton from "../../../GoUpButton/GoUpButton";
+import GoUpButton from "../../../Buttons/GoUpButton/GoUpButton";
 import Spinner from "../../../Spinner/Spinner";
 import Page from "../../../Page/Page";
 import PageList from "../../../PageList/PageList";
