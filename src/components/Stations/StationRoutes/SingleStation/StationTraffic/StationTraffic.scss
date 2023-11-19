@@ -1,0 +1,6 @@
+.traffic-loader-container {
+  transform: translateY(4px);
+  @media (max-width: 600px) {
+    transform: translateY(2px);
+  }
+}

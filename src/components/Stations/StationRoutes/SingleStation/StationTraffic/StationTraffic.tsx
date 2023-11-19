@@ -1,6 +1,9 @@
-import TrafficCounter from "./TrafficCounter";
 import { useGetStationTrafficData } from "../../../../../Hooks/useGetStationTrafficData";
+// styles
+import "./StationTraffic.scss";
+// components
 import SmallSpinner from "../../../../Spinner/SmallSpinner";
+import TrafficCounter from "./TrafficCounter";
 
 interface IStationTraffic {
   station_id: number;
@@ -33,9 +36,10 @@ const StationTraffic = ({ station_id }: IStationTraffic) => {
 };
 
 const Loader = () => {
+  const screenWidth = window.innerWidth;
   return (
-    <div style={{ height: "45px" }}>
-      <SmallSpinner />
+    <div className="traffic-loader-container" style={{ height: "45px" }}>
+      <SmallSpinner size={screenWidth > 600 ? 27 : 20} />
     </div>
   );
 };
