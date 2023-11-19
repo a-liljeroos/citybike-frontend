@@ -3,9 +3,9 @@ import { useGetJourneyPage } from "../../../../Hooks";
 import { useJourneyContext } from "../../JourneyContext";
 import { useNavigate } from "react-router-dom";
 // components
-import Spinner from "../../../Spinner/Spinner";
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import JourneyCard from "./JourneyCard";
+import SpinnerPage from "../../../Spinner/SpinnerPage";
 
 interface IJourneyList {
   page: string | undefined;
@@ -19,11 +19,7 @@ const JourneyList = ({ page }: IJourneyList) => {
   });
 
   if (isLoading) {
-    return (
-      <>
-        <Spinner />
-      </>
-    );
+    return <SpinnerPage />;
   }
 
   if (isError || !data) {

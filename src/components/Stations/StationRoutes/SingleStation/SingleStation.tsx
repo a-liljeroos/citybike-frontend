@@ -4,7 +4,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import { useStationContext } from "../../StationContext";
 // components
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
-import Spinner from "../../../Spinner/Spinner";
+import SpinnerPage from "../../../Spinner/SpinnerPage";
 import StationData from "./StationData";
 
 const SingleStation = () => {
@@ -23,11 +23,7 @@ const SingleStation = () => {
   const { spinnerMessage } = useStationContext();
 
   if (isLoading) {
-    return (
-      <div className="page">
-        <Spinner message={spinnerMessage} />
-      </div>
-    );
+    return <SpinnerPage message={spinnerMessage} />;
   }
 
   if (isError || !data) {

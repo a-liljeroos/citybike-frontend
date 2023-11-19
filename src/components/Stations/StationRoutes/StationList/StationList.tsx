@@ -12,7 +12,7 @@ import AddButton from "../../../Buttons/AddButton/AddButton";
 import ErrorMsg from "../../../ErrorMsg/ErrorMsg";
 import Filter from "./Filter/Filter";
 import GoUpButton from "../../../Buttons/GoUpButton/GoUpButton";
-import Spinner from "../../../Spinner/Spinner";
+import SpinnerPage from "../../../Spinner/SpinnerPage";
 import Page from "../../../Page/Page";
 import PageList from "../../../PageList/PageList";
 
@@ -29,11 +29,7 @@ const StationList = () => {
 
   const { data, isLoading, isError, error } = useGetStationList();
   if (isLoading) {
-    return (
-      <Page>
-        <Spinner />
-      </Page>
-    );
+    return <SpinnerPage />;
   }
   if (isError || !data) {
     return <ErrorMsg message={error.message} />;

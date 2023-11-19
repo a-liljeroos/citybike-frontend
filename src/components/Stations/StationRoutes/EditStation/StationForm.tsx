@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 // styling
 import "./StationForm.scss";
 // components
-import Spinner from "../../../Spinner/Spinner";
+import SpinnerPage from "../../../Spinner/SpinnerPage";
 import PageNav from "../../../PageNav/PageNav";
 
 interface IStationForm {
@@ -43,7 +43,7 @@ const StationForm = ({ id }: IStationForm) => {
   const { mutate, mutateLoading } = useStationForm({ station_id: station_id });
 
   if (isLoading || !data) {
-    return <Spinner />;
+    return <SpinnerPage />;
   }
 
   return (
