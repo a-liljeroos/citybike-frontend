@@ -11,6 +11,7 @@ import NavBar from "./components/NavBar/NavBar";
 import NoPage from "./components/NoPage/NoPage";
 import Stations from "./components/Stations/Stations";
 import LandingPage from "./components/LandingPage/LandingPage";
+import UserRoutes from "./components/UserRoutes/UserRoutes";
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
               <Route index element={<LandingPage />} />
               <Route index path="stations/*" element={<Stations />} />
               <Route path="journeys/*" element={<Journeys />} />
+              <Route path="user/*" element={<UserRoutes />} />
               <Route path="*" element={<NoPage />} />
             </Routes>
           </main>
