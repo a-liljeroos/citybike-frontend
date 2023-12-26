@@ -5,7 +5,7 @@ import { TUser } from "./Types";
 import toast from "react-hot-toast";
 
 type TAuthContext = {
-  login: () => void;
+  login: (t: string, user: TUser) => void;
   logout: () => void;
   token: string;
   setToken: (token: string) => void;
@@ -28,7 +28,12 @@ export function AuthContextProvider({ children }: TAuthContextProvider) {
   const [token, setToken] = useSessionStorage<string>("t", "");
   const navigate = useNavigate();
 
-  const login = () => {};
+  const login = (t: string, user: TUser) => {
+    setToken(t);
+    setUser(user);
+    toast.success("Logged in successfully!");
+    navigate("/");
+  };
 
   const logout = () => {
     setUser(null);
