@@ -35,6 +35,16 @@ const NavBar = () => {
           >
             <li className={"nav-link "}>Journeys</li>
           </NavLink>
+          <NavLink
+            to="user"
+            id="user-link"
+            className={({ isActive, isPending }) =>
+              isPending ? "nav-link-a" : isActive ? "nav-link-active" : ""
+            }
+            aria-label="Login"
+          >
+            <li className={"nav-link"}>User</li>
+          </NavLink>
         </ul>
       </div>
     </nav>
