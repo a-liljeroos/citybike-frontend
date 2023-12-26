@@ -1,5 +1,6 @@
 import { Routes, Route } from "react-router-dom";
 import { AppContextProvider, useAppContext } from "./AppContext";
+import { AuthContextProvider } from "./AuthContext";
 // styles
 import "./App.scss";
 // icons
@@ -13,21 +14,23 @@ import LandingPage from "./components/LandingPage/LandingPage";
 
 function App() {
   return (
-    <AppContextProvider>
-      <div className="App">
-        <header>
-          <NavBar />
-        </header>
-        <main className="bg-color-2">
-          <Routes>
-            <Route index element={<LandingPage />} />
-            <Route index path="stations/*" element={<Stations />} />
-            <Route path="journeys/*" element={<Journeys />} />
-            <Route path="*" element={<NoPage />} />
-          </Routes>
-        </main>
-      </div>
-    </AppContextProvider>
+    <AuthContextProvider>
+      <AppContextProvider>
+        <div className="App">
+          <header>
+            <NavBar />
+          </header>
+          <main className="bg-color-2">
+            <Routes>
+              <Route index element={<LandingPage />} />
+              <Route index path="stations/*" element={<Stations />} />
+              <Route path="journeys/*" element={<Journeys />} />
+              <Route path="*" element={<NoPage />} />
+            </Routes>
+          </main>
+        </div>
+      </AppContextProvider>
+    </AuthContextProvider>
   );
 }
 
