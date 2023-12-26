@@ -1,4 +1,5 @@
 import { BrowserRouter } from "react-router-dom";
+import { queryClient } from "./react-query/client";
 import { QueryClient, QueryClientProvider } from "react-query";
 import React from "react";
 import ReactDOM from "react-dom/client";
@@ -8,8 +9,6 @@ import "./index.scss";
 // components
 import App from "./App";
 import CustomToaster from "./components/Toaster/CustomToaster";
-
-const queryClient = new QueryClient();
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
