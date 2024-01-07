@@ -24,7 +24,7 @@ type TAuthContextProvider = {
 };
 
 export function AuthContextProvider({ children }: TAuthContextProvider) {
-  const [user, setUser] = useState<TUser | null>(null);
+  const [user, setUser] = useSessionStorage<TUser | null>("user", null);
   const [token, setToken] = useSessionStorage<string>("t", "");
   const navigate = useNavigate();
 

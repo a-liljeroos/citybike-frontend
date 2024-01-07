@@ -1,17 +1,31 @@
-import { Routes, Route } from "react-router-dom";
-import { AppContextProvider, useAppContext } from "./AppContext";
-import { AuthContextProvider } from "./AuthContext";
+import { AppContextProvider } from "./AppContext";
+import { AuthContextProvider, useAuthContext } from "./AuthContext";
+import { Routes, Route, Outlet, Navigate } from "react-router-dom";
+import { toast } from "react-hot-toast";
 // styles
 import "./App.scss";
 // icons
 import Icon from "./components/Icons/icon.png";
 // components
 import Journeys from "./components/Journey/Journeys";
+import LandingPage from "./components/LandingPage/LandingPage";
 import NavBar from "./components/NavBar/NavBar";
 import NoPage from "./components/NoPage/NoPage";
 import Stations from "./components/Stations/Stations";
-import LandingPage from "./components/LandingPage/LandingPage";
 import UserRoutes from "./components/UserRoutes/UserRoutes";
+
+interface IProtectedRoute {
+  redirectPath?: string;
+}
+
+const ProtectedRoute = ({ redirectPath = "/user" }: IProtectedRoute) => {
+  const { user } = useAuthContext();
+  if (user === null || user === undefined) {
+    toast.error("You must be logged in to view this page.");
+    return <Navigate to={redirectPath} replace />;
+  }
+  return <Outlet />;
+};
 
 function App() {
   return (
@@ -24,9 +38,11 @@ function App() {
           <main className="bg-color-2">
             <Routes>
               <Route index element={<LandingPage />} />
-              <Route index path="stations/*" element={<Stations />} />
-              <Route path="journeys/*" element={<Journeys />} />
               <Route path="user/*" element={<UserRoutes />} />
+              <Route element={<ProtectedRoute />}>
+                <Route path="stations/*" element={<Stations />} />
+                <Route path="journeys/*" element={<Journeys />} />
+              </Route>
               <Route path="*" element={<NoPage />} />
             </Routes>
           </main>
