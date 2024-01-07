@@ -5,6 +5,7 @@ import { useAuthContext } from "../../AuthContext";
 // styles
 import "./UserRoutes.scss";
 // components
+import CreateAccount from "./Routes/CreateAccount/CreateAccount";
 import UserPage from "./Routes/UserPage/UserPage";
 import Login from "./Routes/Login/Login";
 
@@ -20,6 +21,7 @@ const UserRoutes = () => {
     <Routes>
       <Route path="/" index element={<UserPage />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/create-account" element={<CreateAccount />} />
     </Routes>
   );
 };
