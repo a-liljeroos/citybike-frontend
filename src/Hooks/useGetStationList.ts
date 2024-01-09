@@ -1,11 +1,11 @@
 import { TStation } from "../Types";
 import { URL } from "../constants";
-import { useQuery } from "react-query";
 import { useAuthContext } from "../AuthContext";
-import toast from "react-hot-toast";
+import { useQuery } from "react-query";
+import { toasterMsg } from "../components/Toaster/toasters";
 
 const useGetStationList = () => {
-  const { token } = useAuthContext();
+  const { token, cleanUserData } = useAuthContext();
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["getStations"],
     queryFn: async (): Promise<TStation[]> => {
@@ -17,16 +17,15 @@ const useGetStationList = () => {
         },
       });
       if (res.status === 401) {
-        throw new Error("Unauthorized");
+        cleanUserData();
+        toasterMsg.unauthorized();
       }
       if (!res.ok) {
         throw new Error("/");
       }
       return res.json();
     },
-    onError: (error) => {
-      toast.error(`Service Unavailable.`);
-    },
+    onError: (error) => {},
     refetchOnWindowFocus: false,
     retry: false,
   });

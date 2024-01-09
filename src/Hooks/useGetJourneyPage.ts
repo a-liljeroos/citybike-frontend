@@ -2,7 +2,7 @@ import { TJourney } from "../Types";
 import { URL } from "../constants";
 import { useQuery } from "react-query";
 import { useAuthContext } from "../AuthContext";
-import toast from "react-hot-toast";
+import { toasterMsg } from "../components/Toaster/toasters";
 
 interface IuseGetJourneyPage {
   page: number;
@@ -21,7 +21,7 @@ type JourneyPageResponse = {
 
 const useGetJourneyPage = ({ page, totalJourneys }: IuseGetJourneyPage) => {
   const pageNumber = Math.ceil(page);
-  const { token } = useAuthContext();
+  const { token, cleanUserData } = useAuthContext();
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["journeys", pageNumber],
     queryFn: async (): Promise<JourneyPageResponse> => {
@@ -33,7 +33,8 @@ const useGetJourneyPage = ({ page, totalJourneys }: IuseGetJourneyPage) => {
         },
       });
       if (res.status === 401) {
-        throw new Error("Unauthorized");
+        toasterMsg.unauthorized();
+        cleanUserData();
       }
 
       if (!res.ok) {
@@ -53,9 +54,7 @@ const useGetJourneyPage = ({ page, totalJourneys }: IuseGetJourneyPage) => {
 
       return dataWithTotalJourneys;
     },
-    onError: (error) => {
-      toast.error(`Service Unavailable.`);
-    },
+    onError: (error) => {},
     refetchOnWindowFocus: false,
     retry: false,
   });

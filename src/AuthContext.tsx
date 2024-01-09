@@ -1,8 +1,8 @@
 import { createContext, ReactNode, useContext, useState } from "react";
-import { useSessionStorage } from "./components/utilities";
-import { useNavigate } from "react-router-dom";
+import { toasterMsg } from "./components/Toaster/toasters";
 import { TUser } from "./Types";
-import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
+import { useSessionStorage } from "./components/utilities";
 
 type TAuthContext = {
   login: (t: string, user: TUser) => void;
@@ -11,6 +11,7 @@ type TAuthContext = {
   setToken: (token: string) => void;
   user: TUser | null;
   setUser: (user: TUser | null) => void;
+  cleanUserData: () => void;
 };
 
 const AuthContext = createContext<TAuthContext>({} as TAuthContext);
@@ -28,17 +29,21 @@ export function AuthContextProvider({ children }: TAuthContextProvider) {
   const [token, setToken] = useSessionStorage<string | null>("t", null);
   const navigate = useNavigate();
 
+  const cleanUserData = () => {
+    setUser(null);
+    setToken(null);
+  };
+
   const login = (t: string, user: TUser) => {
     setToken(t);
     setUser(user);
-    toast.success("Logged in successfully!");
+    toasterMsg.loginSuccess();
     navigate("/");
   };
 
   const logout = () => {
-    setUser(null);
-    setToken(null);
-    toast.success("Logged out");
+    cleanUserData();
+    toasterMsg.logoutSuccess();
     navigate("/user/login");
   };
 
@@ -51,6 +56,7 @@ export function AuthContextProvider({ children }: TAuthContextProvider) {
         logout,
         token,
         setToken,
+        cleanUserData,
       }}
     >
       {children}

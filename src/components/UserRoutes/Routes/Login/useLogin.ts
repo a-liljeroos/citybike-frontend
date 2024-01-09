@@ -1,8 +1,8 @@
+import { toasterMsg } from "../../../Toaster/toasters";
 import { TUser } from "../../../../Types";
 import { URL, QUERY_KEY } from "../../../../constants";
-import { useMutation, UseMutateFunction, useQueryClient } from "react-query";
 import { useAuthContext } from "../../../../AuthContext";
-import toast from "react-hot-toast";
+import { useMutation, UseMutateFunction, useQueryClient } from "react-query";
 
 type ILoginResponse = {
   t: string;
@@ -47,7 +47,7 @@ export function useLogin(): IuseLogin {
       login(data.t, data.user);
     },
     onError: (error) => {
-      toast.error("Ops.. Error on login. Try again!");
+      toasterMsg.loginFailed();
     },
   });
 

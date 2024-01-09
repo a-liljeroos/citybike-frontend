@@ -1,15 +1,15 @@
+import { toasterMsg } from "../components/Toaster/toasters";
 import { TStation } from "../Types";
 import { URL } from "../constants";
-import { useQuery } from "react-query";
 import { useAuthContext } from "../AuthContext";
-import toast from "react-hot-toast";
+import { useQuery } from "react-query";
 
 interface IuseGetStationData {
   station_id: string | undefined;
 }
 
 const useGetStationData = ({ station_id }: IuseGetStationData) => {
-  const { token } = useAuthContext();
+  const { token, cleanUserData } = useAuthContext();
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["getStationInfo", station_id, false],
     queryFn: async (): Promise<TStation> => {
@@ -21,7 +21,8 @@ const useGetStationData = ({ station_id }: IuseGetStationData) => {
         },
       });
       if (res.status === 401) {
-        throw new Error("Unauthorized");
+        toasterMsg.unauthorized();
+        cleanUserData();
       }
       if (!res.ok) {
         throw new Error("/stations");
@@ -29,7 +30,7 @@ const useGetStationData = ({ station_id }: IuseGetStationData) => {
       return res.json();
     },
     onError: (error) => {
-      toast.error(`Service Unavailable.`);
+      toasterMsg.noService();
     },
     refetchOnWindowFocus: false,
     retry: false,

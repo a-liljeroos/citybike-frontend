@@ -2,7 +2,7 @@ import { TStation } from "../Types";
 import { URL } from "../constants";
 import { useMutation, useQueryClient } from "react-query";
 import { useAuthContext } from "../AuthContext";
-import toast from "react-hot-toast";
+import { toasterMsg } from "../components/Toaster/toasters";
 
 interface IuseStationForm {
   station_id: number | string | undefined;
@@ -27,7 +27,7 @@ const useStationForm = ({ station_id }: IuseStationForm) => {
         queryKey: ["getStationInfo", station_id, false],
       }),
     onError: (error) => {
-      toast.error(`Service Unavailable.`);
+      toasterMsg.noService();
     },
     retry: false,
   });

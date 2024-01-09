@@ -1,7 +1,7 @@
 import { AppContextProvider } from "./AppContext";
 import { AuthContextProvider, useAuthContext } from "./AuthContext";
 import { Routes, Route, Outlet, Navigate } from "react-router-dom";
-import { toast } from "react-hot-toast";
+import { toasterMsg } from "./components/Toaster/toasters";
 // styles
 import "./App.scss";
 // icons
@@ -13,6 +13,7 @@ import NavBar from "./components/NavBar/NavBar";
 import NoPage from "./components/NoPage/NoPage";
 import Stations from "./components/Stations/Stations";
 import UserRoutes from "./components/UserRoutes/UserRoutes";
+import toast from "react-hot-toast";
 
 interface IProtectedRoute {
   redirectPath?: string;
@@ -21,7 +22,7 @@ interface IProtectedRoute {
 const ProtectedRoute = ({ redirectPath = "/user" }: IProtectedRoute) => {
   const { token } = useAuthContext();
   if (token === null || token === undefined) {
-    toast.error("You must be logged in to view this page.");
+    toasterMsg.loginRequired();
     return <Navigate to={redirectPath} replace />;
   }
   return <Outlet />;

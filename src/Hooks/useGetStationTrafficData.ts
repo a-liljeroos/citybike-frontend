@@ -1,8 +1,8 @@
+import { toasterMsg } from "../components/Toaster/toasters";
 import { TStationTrafficData } from "../Types";
 import { URL } from "../constants";
-import { useQuery } from "react-query";
 import { useAuthContext } from "../AuthContext";
-import toast from "react-hot-toast";
+import { useQuery } from "react-query";
 
 interface IuseGetStationTrafficData {
   station_id: string | number | undefined;
@@ -25,13 +25,13 @@ const useGetStationTrafficData = ({
           },
         }
       );
-      if (res.status === 401) {
-        throw new Error("Unauthorized");
+      if (res.status === 503) {
+        toasterMsg.noData("traffic");
       }
       return res.json();
     },
     onError: (error) => {
-      toast.error(`Couldn't get traffic data.`);
+      toasterMsg.noData("traffic");
     },
     refetchOnWindowFocus: false,
     retry: false,
