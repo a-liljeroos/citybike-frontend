@@ -9,9 +9,13 @@ const UserPage = () => {
   const { user, logout } = useAuthContext();
   return (
     <Page>
-      <p className={styles.text}>Logged in as {user?.username}</p>
-      <button className={styles.button} onClick={logout}>
-        Logout
+      <div className={styles.userInfo}>
+        <h3 className={styles.userName}>{user?.username}</h3>
+        {user?.id && <p className={styles.text}>User id: {user?.id}</p>}
+        {user?.email && <p className={styles.text}>Email: {user?.email}</p>}
+      </div>
+      <button className={styles.logoutButton} onClick={logout}>
+        Log Out
       </button>
     </Page>
   );
