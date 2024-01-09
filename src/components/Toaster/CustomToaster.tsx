@@ -17,7 +17,7 @@ const CustomToaster = () => {
             },
           },
         }}
-        containerStyle={{ top: "20%" }}
+        containerStyle={{ top: "15%" }}
       >
         {(t) => (
           <ToastBar

@@ -1,19 +1,24 @@
 import { TStation } from "../Types";
 import { URL } from "../constants";
 import { useMutation, useQueryClient } from "react-query";
-import toast from "react-hot-toast";
+import { useAuthContext } from "../AuthContext";
+import { toasterMsg } from "../components/Toaster/toasters";
 
 interface IuseStationForm {
   station_id: number | string | undefined;
 }
 
 const useStationForm = ({ station_id }: IuseStationForm) => {
+  const { token } = useAuthContext();
   const queryClient = useQueryClient();
   const { mutate, isLoading: mutateLoading } = useMutation({
     mutationFn: async (formData: TStation) => {
       return fetch(`${URL}/stations/edit`, {
         method: "PUT",
-        headers: { "Content-type": "application/json" },
+        headers: {
+          "Content-type": "application/json",
+          "X-access-token": `${token}`,
+        },
         body: JSON.stringify(formData),
       });
     },
@@ -22,7 +27,7 @@ const useStationForm = ({ station_id }: IuseStationForm) => {
         queryKey: ["getStationInfo", station_id, false],
       }),
     onError: (error) => {
-      toast.error(`Service Unavailable.`);
+      toasterMsg.noService();
     },
     retry: false,
   });

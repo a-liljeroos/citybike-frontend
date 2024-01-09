@@ -1,33 +1,55 @@
-import { Routes, Route } from "react-router-dom";
-import { AppContextProvider, useAppContext } from "./AppContext";
+import { AppContextProvider } from "./AppContext";
+import { AuthContextProvider, useAuthContext } from "./AuthContext";
+import { Routes, Route, Outlet, Navigate } from "react-router-dom";
+import { toasterMsg } from "./components/Toaster/toasters";
 // styles
 import "./App.scss";
 // icons
 import Icon from "./components/Icons/icon.png";
 // components
 import Journeys from "./components/Journey/Journeys";
+import LandingPage from "./components/LandingPage/LandingPage";
 import NavBar from "./components/NavBar/NavBar";
 import NoPage from "./components/NoPage/NoPage";
 import Stations from "./components/Stations/Stations";
-import LandingPage from "./components/LandingPage/LandingPage";
+import UserRoutes from "./components/UserRoutes/UserRoutes";
+import toast from "react-hot-toast";
+
+interface IProtectedRoute {
+  redirectPath?: string;
+}
+
+const ProtectedRoute = ({ redirectPath = "/user" }: IProtectedRoute) => {
+  const { token } = useAuthContext();
+  if (token === null || token === undefined) {
+    toasterMsg.loginRequired();
+    return <Navigate to={redirectPath} replace />;
+  }
+  return <Outlet />;
+};
 
 function App() {
   return (
-    <AppContextProvider>
-      <div className="App">
-        <header>
-          <NavBar />
-        </header>
-        <main className="bg-color-2">
-          <Routes>
-            <Route index element={<LandingPage />} />
-            <Route index path="stations/*" element={<Stations />} />
-            <Route path="journeys/*" element={<Journeys />} />
-            <Route path="*" element={<NoPage />} />
-          </Routes>
-        </main>
-      </div>
-    </AppContextProvider>
+    <AuthContextProvider>
+      <AppContextProvider>
+        <div className="App">
+          <header>
+            <NavBar />
+          </header>
+          <main className="bg-color-2">
+            <Routes>
+              <Route index element={<LandingPage />} />
+              <Route path="user/*" element={<UserRoutes />} />
+              <Route element={<ProtectedRoute />}>
+                <Route path="stations/*" element={<Stations />} />
+                <Route path="journeys/*" element={<Journeys />} />
+              </Route>
+              <Route path="*" element={<NoPage />} />
+            </Routes>
+          </main>
+        </div>
+      </AppContextProvider>
+    </AuthContextProvider>
   );
 }
 

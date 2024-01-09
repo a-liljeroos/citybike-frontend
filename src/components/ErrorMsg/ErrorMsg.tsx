@@ -8,10 +8,11 @@ import { BsEmojiFrown } from "react-icons/bs";
 import Page from "../Page/Page";
 
 interface IErrorMsg {
+  redirectTo?: string;
   message?: string;
 }
 
-const ErrorMsg = ({ message }: IErrorMsg) => {
+const ErrorMsg = ({ message, redirectTo }: IErrorMsg) => {
   const navigate = useNavigate();
   const [countdown, setCountdown] = useState(5);
 
@@ -25,9 +26,9 @@ const ErrorMsg = ({ message }: IErrorMsg) => {
 
   useEffect(() => {
     if (countdown === 0) {
-      navigate(message || "/");
+      navigate(redirectTo || "/");
     }
-  }, [countdown, message, navigate]);
+  }, [countdown, redirectTo, navigate]);
 
   return (
     <Page>
@@ -35,7 +36,7 @@ const ErrorMsg = ({ message }: IErrorMsg) => {
         className="error-page"
         data-testid="error-page"
         onClick={() => {
-          navigate(message || "/");
+          navigate(redirectTo || "/");
         }}
       >
         <BsEmojiFrown size={50} className="error-emote" />
