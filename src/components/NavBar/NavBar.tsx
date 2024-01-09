@@ -2,6 +2,8 @@ import { NavLink } from "react-router-dom";
 import { useAuthContext } from "../../AuthContext";
 // styling
 import "./NavBar.scss";
+// icons
+import { FaUserCircle } from "react-icons/fa";
 
 const NavBar = () => {
   const { user } = useAuthContext();
@@ -50,7 +52,9 @@ const NavBar = () => {
             }
             aria-label="Login"
           >
-            <li className={"nav-link"}>User</li>
+            <li className={"nav-link"}>
+              <FaUserCircle size={28} color="rgb(250, 250, 250)" />
+            </li>
           </NavLink>
         </ul>
       </div>
