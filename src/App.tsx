@@ -19,8 +19,8 @@ interface IProtectedRoute {
 }
 
 const ProtectedRoute = ({ redirectPath = "/user" }: IProtectedRoute) => {
-  const { user } = useAuthContext();
-  if (user === null || user === undefined) {
+  const { token } = useAuthContext();
+  if (token === null || token === undefined) {
     toast.error("You must be logged in to view this page.");
     return <Navigate to={redirectPath} replace />;
   }

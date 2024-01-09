@@ -1,6 +1,7 @@
 import { TStation } from "../Types";
 import { URL } from "../constants";
 import { useMutation, useQueryClient } from "react-query";
+import { useAuthContext } from "../AuthContext";
 import toast from "react-hot-toast";
 
 interface IuseStationForm {
@@ -8,12 +9,16 @@ interface IuseStationForm {
 }
 
 const useStationForm = ({ station_id }: IuseStationForm) => {
+  const { token } = useAuthContext();
   const queryClient = useQueryClient();
   const { mutate, isLoading: mutateLoading } = useMutation({
     mutationFn: async (formData: TStation) => {
       return fetch(`${URL}/stations/edit`, {
         method: "PUT",
-        headers: { "Content-type": "application/json" },
+        headers: {
+          "Content-type": "application/json",
+          "X-access-token": `${token}`,
+        },
         body: JSON.stringify(formData),
       });
     },

@@ -7,7 +7,7 @@ import toast from "react-hot-toast";
 type TAuthContext = {
   login: (t: string, user: TUser) => void;
   logout: () => void;
-  token: string;
+  token: string | null;
   setToken: (token: string) => void;
   user: TUser | null;
   setUser: (user: TUser | null) => void;
@@ -25,7 +25,7 @@ type TAuthContextProvider = {
 
 export function AuthContextProvider({ children }: TAuthContextProvider) {
   const [user, setUser] = useSessionStorage<TUser | null>("user", null);
-  const [token, setToken] = useSessionStorage<string>("t", "");
+  const [token, setToken] = useSessionStorage<string | null>("t", null);
   const navigate = useNavigate();
 
   const login = (t: string, user: TUser) => {
@@ -37,7 +37,7 @@ export function AuthContextProvider({ children }: TAuthContextProvider) {
 
   const logout = () => {
     setUser(null);
-    setToken("");
+    setToken(null);
     toast.success("Logged out");
     navigate("/user/login");
   };

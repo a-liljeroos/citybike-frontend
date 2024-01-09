@@ -1,6 +1,7 @@
 import { TJourney } from "../Types";
 import { URL } from "../constants";
 import { useQuery } from "react-query";
+import { useAuthContext } from "../AuthContext";
 import toast from "react-hot-toast";
 
 interface IuseGetJourneyPage {
@@ -20,13 +21,20 @@ type JourneyPageResponse = {
 
 const useGetJourneyPage = ({ page, totalJourneys }: IuseGetJourneyPage) => {
   const pageNumber = Math.ceil(page);
+  const { token } = useAuthContext();
   const { data, isLoading, isError, error } = useQuery({
     queryKey: ["journeys", pageNumber],
     queryFn: async (): Promise<JourneyPageResponse> => {
       const res = await fetch(`${URL}/journeys/pages?page=${pageNumber}`, {
         method: "GET",
-        headers: { "Content-type": "application/json" },
+        headers: {
+          "Content-type": "application/json",
+          "X-access-token": `${token}`,
+        },
       });
+      if (res.status === 401) {
+        throw new Error("Unauthorized");
+      }
 
       if (!res.ok) {
         throw new Error("/");
