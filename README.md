@@ -8,12 +8,14 @@
   <li>HTML / CSS</li>
   <li>Docker</li>
   <li>Google Maps</li>
-  <li><i>react-query, react-router-dom, react-icons, react-countup, sass, react-hot-toast</i></li>
+  <li><i>jsonwebtoken, react-query, react-router-dom, react-icons, react-countup, sass, react-hot-toast</i></li>
   <li>jest, msw</li>
 </ul>
 
 <br/>
 <p>This the frontend for the Citybike API. A small single page application made for learning purposes. I designed the user interface and application logic from scratch. Data fetching is implemented with <a target="_blank" href="https://react-query-v3.tanstack.com/" >react-query</a> which provides loading and error states.</p>
+
+<p>The application has a login feature implemented with JSON web token which is stored in the browsers session storage. New users can be created and the user data is stored in the database. Passwords are hashed with <a target="_blank" href="https://www.npmjs.com/package/bcrypt">bcrypt.</a> </p>
 
 <p> From the navigation bar the user can choose two paths: stations and journeys. Both routes use a stateContextProvider of its own. Options set by the user are stored in the browsers local storage.</p>
 
