@@ -2,7 +2,7 @@ import { TJourney } from "../Types";
 import { URL } from "../constants";
 import { useQuery } from "react-query";
 import { useAuthContext } from "../AuthContext";
-import { toasterMsg } from "../components/Toaster/toasters";
+import { toasterMsg } from "../components/index";
 
 interface IuseGetJourneyPage {
   page: number;

@@ -5,14 +5,14 @@ import "./ErrorMsg.scss";
 // icons
 import { BsEmojiFrown } from "react-icons/bs";
 // components
-import Page from "../Page/Page";
+import { Page } from "../index";
 
 interface IErrorMsg {
   redirectTo?: string;
   message?: string;
 }
 
-const ErrorMsg = ({ message, redirectTo }: IErrorMsg) => {
+export const ErrorMsg = ({ message, redirectTo }: IErrorMsg) => {
   const navigate = useNavigate();
   const [countdown, setCountdown] = useState(5);
 
@@ -49,5 +49,3 @@ const ErrorMsg = ({ message, redirectTo }: IErrorMsg) => {
     </Page>
   );
 };
-
-export default ErrorMsg;

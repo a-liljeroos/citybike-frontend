@@ -7,7 +7,7 @@ interface ISpinner {
   message?: string;
 }
 
-const Spinner = ({ message }: ISpinner) => {
+export const Spinner = ({ message }: ISpinner) => {
   return (
     <div className="spinner-cont" data-testid="spinner">
       <h4 className="spinner-message">{message ? message : ""}</h4>
@@ -15,5 +15,3 @@ const Spinner = ({ message }: ISpinner) => {
     </div>
   );
 };
-
-export default Spinner;

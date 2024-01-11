@@ -2,7 +2,7 @@ import { TStation } from "../Types";
 import { URL } from "../constants";
 import { useMutation, useQueryClient } from "react-query";
 import { useAuthContext } from "../AuthContext";
-import { toasterMsg } from "../components/Toaster/toasters";
+import { toasterMsg } from "../components/index";
 
 interface IuseStationForm {
   station_id: number | string | undefined;

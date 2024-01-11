@@ -1,0 +1,121 @@
+@import "../../colors.scss";
+
+.index-page {
+  padding: 0px;
+  position: relative;
+  animation: text-reveal 700ms ease-out;
+}
+
+.index-text {
+  color: $text-color;
+  padding-block: 50px;
+  padding-inline: 30px;
+  text-align: left;
+  width: 100%;
+  border-radius: 50px;
+  @media (max-width: 500px) {
+    font-size: 15px;
+  }
+}
+
+$index-page-border: 10px dashed $color-1;
+$index-page-border-white: 10px dashed $button-color;
+
+.index-text-top {
+  position: relative;
+  width: 40%;
+  border-right: $index-page-border-white;
+  border-bottom: $index-page-border;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.index-text-top::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  right: 25px;
+  height: 30px;
+  width: 100%;
+  background-color: $color-2;
+}
+
+.index-text-middle {
+  transform: translateY(-10px);
+  border-left: $index-page-border;
+  border-bottom: $index-page-border;
+  border-top: $index-page-border;
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+  margin-left: 40px;
+  padding-right: 40px;
+}
+
+.index-text-middle::after,
+.index-text-middle::before {
+  background: rgb(34, 34, 34);
+  background: -moz-linear-gradient(
+    108deg,
+    rgba(34, 34, 34, 0) 0%,
+    rgba(34, 34, 34, 1) 100%
+  );
+  background: -webkit-linear-gradient(
+    108deg,
+    rgba(34, 34, 34, 0) 0%,
+    rgba(34, 34, 34, 1) 100%
+  );
+  background: linear-gradient(
+    108deg,
+    rgba(34, 34, 34, 0) 0%,
+    rgba(34, 34, 34, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#222222",endColorstr="#222222",GradientType=1);
+}
+
+.index-text-middle::before {
+  content: "";
+  position: absolute;
+  top: -25px;
+  right: 0px;
+  height: 40px;
+  width: 30%;
+}
+
+.index-text-middle::after {
+  content: "";
+  position: absolute;
+  bottom: -25px;
+  right: 0px;
+  height: 40px;
+  width: 30%;
+}
+
+.index-text-bottom {
+  position: relative;
+  translate: translateX(-40%) translateY(-40px);
+  width: 0;
+  height: 100%;
+  border-top: $index-page-border-white;
+  border-right: $index-page-border-white;
+  border-top-left-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.frontpage-icon-top {
+  position: absolute;
+  top: 60px;
+  right: -10px;
+  width: 90px;
+  height: 90px;
+  z-index: 1;
+  animation: none;
+}
+
+.frontpage-icon-bottom {
+  position: absolute;
+  top: -60px;
+  left: -50px;
+  width: 90px;
+  height: 90px;
+  animation: none;
+}

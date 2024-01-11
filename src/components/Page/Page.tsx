@@ -6,7 +6,7 @@ interface IPage {
   dataTestId?: string;
 }
 
-const Page = ({ children, classNames, dataTestId }: IPage) => {
+export const Page = ({ children, classNames, dataTestId }: IPage) => {
   return (
     <div
       className={"page " + classNames}
@@ -16,5 +16,3 @@ const Page = ({ children, classNames, dataTestId }: IPage) => {
     </div>
   );
 };
-
-export default Page;

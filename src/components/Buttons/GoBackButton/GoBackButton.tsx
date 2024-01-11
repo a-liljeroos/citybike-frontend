@@ -9,7 +9,7 @@ interface IGoBackButton {
   style?: React.CSSProperties;
 }
 
-const GoBackButton = ({ size, style }: IGoBackButton) => {
+export const GoBackButton = ({ size, style }: IGoBackButton) => {
   const navigate = useNavigate();
   return (
     <button
@@ -23,5 +23,3 @@ const GoBackButton = ({ size, style }: IGoBackButton) => {
     </button>
   );
 };
-
-export default GoBackButton;

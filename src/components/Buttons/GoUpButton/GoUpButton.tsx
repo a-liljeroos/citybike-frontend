@@ -9,7 +9,11 @@ interface IGoUpButton {
   color?: string;
 }
 
-const GoUpButton = ({ listElementClassName, size, color }: IGoUpButton) => {
+export const GoUpButton = ({
+  listElementClassName,
+  size,
+  color,
+}: IGoUpButton) => {
   const goUp = () => {
     const list = document.querySelector(`.${listElementClassName}`);
     list?.scrollTo({ top: 0, behavior: "smooth" });
@@ -23,5 +27,3 @@ const GoUpButton = ({ listElementClassName, size, color }: IGoUpButton) => {
     </div>
   );
 };
-
-export default GoUpButton;

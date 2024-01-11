@@ -2,13 +2,13 @@ import React from "react";
 // styling
 import "./PageNav.scss";
 // components
-import GoBackButton from "../Buttons/GoBackButton/GoBackButton";
+import { GoBackButton } from "../Buttons/GoBackButton/GoBackButton";
 
 interface IPageNav {
   children?: React.ReactNode;
 }
 
-const PageNav = ({ children }: IPageNav) => {
+export const PageNav = ({ children }: IPageNav) => {
   return (
     <div className="page-nav">
       <GoBackButton style={{ marginRight: "13px" }} />
@@ -16,5 +16,3 @@ const PageNav = ({ children }: IPageNav) => {
     </div>
   );
 };
-
-export default PageNav;

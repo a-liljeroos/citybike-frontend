@@ -1,4 +1,4 @@
-import { toasterMsg } from "../components/Toaster/toasters";
+import { toasterMsg } from "../components/index";
 import { TStationTrafficData } from "../Types";
 import { URL } from "../constants";
 import { useAuthContext } from "../AuthContext";

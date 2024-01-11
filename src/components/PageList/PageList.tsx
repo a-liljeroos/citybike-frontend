@@ -5,7 +5,7 @@ interface IPageList {
   children: React.ReactNode;
 }
 
-const PageList = ({ children }: IPageList) => {
+export const PageList = ({ children }: IPageList) => {
   return (
     <div className="list-container">
       <div className="list-shadow-top" />
@@ -15,5 +15,3 @@ const PageList = ({ children }: IPageList) => {
     </div>
   );
 };
-
-export default PageList;

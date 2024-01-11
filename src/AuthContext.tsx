@@ -2,7 +2,7 @@ import { createContext, ReactNode, useContext, useState } from "react";
 import { toasterMsg } from "./components/Toaster/toasters";
 import { TUser } from "./Types";
 import { useNavigate } from "react-router-dom";
-import { useSessionStorage } from "./components/utilities";
+import { useSessionStorage } from "./utilities";
 
 type TAuthContext = {
   login: (t: string, user: TUser) => void;

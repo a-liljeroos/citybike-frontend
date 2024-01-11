@@ -7,12 +7,12 @@ import "./App.scss";
 // icons
 import Icon from "./components/Icons/icon.png";
 // components
-import Journeys from "./components/Journey/Journeys";
-import LandingPage from "./components/LandingPage/LandingPage";
-import NavBar from "./components/NavBar/NavBar";
-import NoPage from "./components/NoPage/NoPage";
-import Stations from "./components/Stations/Stations";
-import UserRoutes from "./components/UserRoutes/UserRoutes";
+import Journeys from "./routes/Journey/Journeys";
+import LandingPage from "./routes/LandingPage/LandingPage";
+import { NavBar } from "./components/index";
+import { NoPage } from "./components/index";
+import Stations from "./routes/Stations/Stations";
+import UserRoutes from "./routes/UserRoutes/UserRoutes";
 import toast from "react-hot-toast";
 
 interface IProtectedRoute {

@@ -2,7 +2,7 @@ import { TStation } from "../Types";
 import { URL } from "../constants";
 import { useAuthContext } from "../AuthContext";
 import { useQuery } from "react-query";
-import { toasterMsg } from "../components/Toaster/toasters";
+import { toasterMsg } from "../components/index";
 
 const useGetStationList = () => {
   const { token, cleanUserData } = useAuthContext();

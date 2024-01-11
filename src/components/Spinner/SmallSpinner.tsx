@@ -7,7 +7,7 @@ interface ISmallSpinner {
   size?: number;
 }
 
-const SmallSpinner = ({ size, color }: ISmallSpinner) => {
+export const SmallSpinner = ({ size, color }: ISmallSpinner) => {
   return (
     <div className="small-spinner-cont" data-testid="spinner">
       <IoMdBicycle
@@ -18,5 +18,3 @@ const SmallSpinner = ({ size, color }: ISmallSpinner) => {
     </div>
   );
 };
-
-export default SmallSpinner;

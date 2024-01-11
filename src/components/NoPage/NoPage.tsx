@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 // components
-import Page from "../Page/Page";
+import { Page } from "../../components/Page/Page";
 
 interface INoPage {
   redirectTo?: string;
 }
 
-const NoPage = ({ redirectTo }: INoPage) => {
+export const NoPage = ({ redirectTo }: INoPage) => {
   const navigate = useNavigate();
   useEffect(() => {
     navigate(redirectTo || "/");
@@ -20,5 +20,3 @@ const NoPage = ({ redirectTo }: INoPage) => {
     </Page>
   );
 };
-
-export default NoPage;

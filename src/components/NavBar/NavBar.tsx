@@ -5,7 +5,7 @@ import "./NavBar.scss";
 // icons
 import { FaUserCircle } from "react-icons/fa";
 
-const NavBar = () => {
+export const NavBar = () => {
   const { user } = useAuthContext();
   return (
     <nav className="bg-color-1" role="navigation" aria-label="Main Navigation">
@@ -61,5 +61,3 @@ const NavBar = () => {
     </nav>
   );
 };
-
-export default NavBar;

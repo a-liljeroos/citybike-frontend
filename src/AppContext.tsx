@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext } from "react";
 import { URL } from "./constants";
-import { useLocalStorage } from "./components/utilities";
+import { useLocalStorage } from "./utilities";
 
 type TAppContext = {
   totalJourneys: number;

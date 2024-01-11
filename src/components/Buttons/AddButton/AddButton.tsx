@@ -5,8 +5,6 @@ interface IAddButton {
   text: string;
 }
 
-const AddButton = ({ text }: IAddButton) => {
+export const AddButton = ({ text }: IAddButton) => {
   return <button className="add-button">{text}</button>;
 };
-
-export default AddButton;
