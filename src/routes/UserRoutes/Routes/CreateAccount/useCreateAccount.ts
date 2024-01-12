@@ -7,6 +7,7 @@ import toast from "react-hot-toast";
 async function createAccount(
   username: string,
   password: string,
+  repeatPassword: string,
   email?: string
 ): Promise<TUser> {
   const response = await fetch(`${URL}/user/create`, {
@@ -14,7 +15,7 @@ async function createAccount(
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify({ username, password, email }),
+    body: JSON.stringify({ username, password, repeatPassword, email }),
   });
   if (!response.ok) throw new Error("Error creating account");
   if (response.status === 409) throw new Error("Username already exists");
@@ -25,7 +26,12 @@ async function createAccount(
 type ICreateAccount = UseMutateFunction<
   TUser,
   Error,
-  { username: string; password: string; email?: string },
+  {
+    username: string;
+    password: string;
+    repeatPassword: string;
+    email?: string;
+  },
   unknown
 >;
 
@@ -36,10 +42,16 @@ export function useCreateAccount(): ICreateAccount {
   const { mutate: createAccountMutation } = useMutation<
     TUser,
     Error,
-    { username: string; password: string; email?: string },
+    {
+      username: string;
+      password: string;
+      repeatPassword: string;
+      email?: string;
+    },
     unknown
   >(
-    ({ username, password, email }) => createAccount(username, password, email),
+    ({ username, password, repeatPassword, email }) =>
+      createAccount(username, password, repeatPassword, email),
     {
       onSuccess: (data) => {
         queryClient.setQueryData([QUERY_KEY.user], data);
