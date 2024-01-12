@@ -28,6 +28,10 @@ class Toaster {
   public loginFailed(): void {
     toast.error("Ops.. Error on login. Try again!");
   }
+
+  public logoutFailed(): void {
+    toast.error("Logout failed. Try again!");
+  }
 }
 
 export const toasterMsg = new Toaster();
