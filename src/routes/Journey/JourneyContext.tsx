@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext } from "react";
-import { useAppContext } from "../../AppContext";
+import useFetchTotalJourneys from "../../Hooks/useFetchTotalJourneys";
 type TJourneyContext = {
   totalJourneys: number;
 };
@@ -15,11 +15,11 @@ type TJourneyContextProvider = {
 };
 
 export function JourneyContextProvider({ children }: TJourneyContextProvider) {
-  const { totalJourneys } = useAppContext();
+  const { totalJourneys } = useFetchTotalJourneys();
   return (
     <JourneyContext.Provider
       value={{
-        totalJourneys,
+        totalJourneys: Number(totalJourneys),
       }}
     >
       {children}

@@ -119,3 +119,8 @@ $index-page-border-white: 10px dashed $button-color;
   height: 90px;
   animation: none;
 }
+
+.error {
+  color: rgb(255, 103, 103);
+  font-style: italic;
+}

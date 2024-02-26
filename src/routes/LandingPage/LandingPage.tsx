@@ -1,13 +1,15 @@
-import { useAppContext } from "../../AppContext";
+import useFetchTotalJourneys from "../../Hooks/useFetchTotalJourneys";
 // styles
 import "./LandingPage.scss";
 // icons
 import { Icon } from "../../components/index";
 // components
 import { Page } from "../../components/index";
+import { SmallSpinner } from "../../components/Spinner/SmallSpinner";
 
 const LandingPage = () => {
-  const { totalJourneys } = useAppContext();
+  const { totalJourneys, loading, error } = useFetchTotalJourneys();
+
   return (
     <Page classNames="index-page">
       <p className="index-text index-text-top">
@@ -19,14 +21,23 @@ const LandingPage = () => {
           from 1.5. to 31.7.2021.
         </p>
         <br />
-        Frontend is made with React and the backend API is ExpressJS. The system
-        is written with TypeScript and uses PostgreSQL database.
-        {totalJourneys !== 0 && (
-          <p>
-            <br />
-            There are total of {totalJourneys.toLocaleString("fi-FI")} journeys
-            in the database.
-          </p>
+        <p>
+          Frontend is made with React and the backend API is ExpressJS. The
+          system is written with TypeScript and uses PostgreSQL database.
+        </p>
+        <br />
+        {!loading ? (
+          <>
+            {error ? (
+              <p className="error">{error}</p>
+            ) : (
+              <p>
+                There are total of {totalJourneys} journeys in the database.
+              </p>
+            )}
+          </>
+        ) : (
+          <SmallSpinner size={25} />
         )}
       </div>
       <p className="index-text index-text-bottom">
